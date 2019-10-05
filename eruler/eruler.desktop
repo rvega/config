@@ -1,0 +1,34 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=ERuler
+Name[ca]=ERuler
+Name[de]=ERuler
+Name[el]=ERuler
+Name[fi]=ERuler
+Name[ja]=ERuler
+Name[ms]=ERuler
+Name[sr]=Е-лењир
+Name[tr]=Cetvel
+GenericName=Screen Ruler
+GenericName[ca]=Regla de pantalla
+GenericName[de]=Bildschirmlineal
+GenericName[el]=Χάρακας οθόνης
+GenericName[eo]=Ekranliniilo
+GenericName[fi]=Näyttöviivain
+GenericName[fr]=Règle d'écran
+GenericName[it]=Righello per lo schermo
+GenericName[ms]=Pembaris Skrin
+GenericName[pl]=Linijka ekranowa
+GenericName[sr]=Екрански лењир
+GenericName[tr]=Ekran Cetveli
+Comment=On-Screen Rule and Measurement
+Comment[ca]=Regla i mesura a la pantalla
+Comment[eo]=Surekranaj ekranliniilo kaj mezurilo
+Comment[fr]=Règle et mesure sur l'écran
+Comment[ms]=Peraturan dan Pengukuran Atas-Skrin
+Comment[tr]=Ekran cetveli ve ölçümü
+Icon=eruler
+Exec=eruler -x -t=light-filled
+Categories=Graphics
+StartupWMClass=eruler

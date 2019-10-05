@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/Rafa/config/eruler/eruler/repo'
+let g:netrw_dirhist_2='/tmp'
+let g:netrw_dirhist_3='/home/Rafa/config/neovim.minimal/nvim/UltiSnips'
+let g:netrw_dirhist_4='/home/Rafa/config/neovim.minimal/nvim/pack/minpac/start/LanguageClient-neovim/src'
+let g:netrw_dirhist_5='/home/Rafa/config/neovim.minimal/nvim'

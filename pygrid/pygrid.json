@@ -1,0 +1,33 @@
+{
+  "default": {
+    "maxheight": 0.67,
+    "maxwidth": 0.67,
+    "minheight": 0.33,
+    "minwidth": 0.25,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "snaptocursor": false,
+    "spacing": 1,
+    "xdivs": 8,
+    "ydivs": 2
+  },
+  "keys": {
+    "accelerator": "<Ctrl><Alt><Mod4>",
+    "commands": {
+      "j": "bottomleft",
+      "k": "bottom",
+      "l": "bottomright",
+      "u": "left",
+      "i": "middle",
+      "o": "right",
+      "7": "topleft",
+      "8": "top",
+      "9": "topright",
+      "0": "cycle-monitor"
+    }
+  }
+}

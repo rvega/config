@@ -1,0 +1,1037 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'b
+	/home/rvg/bin/
+	..
+1490399454
+'h
+	/home/rvg/
+	..
+1490399454
+'j
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos
+	firmware-updater
+1538571617
+'m
+	/home/Rafa/Projects/Active/Explora/repos/gui
+	build
+1525925428
+
+# TUI:
+al
+q0
+v2
+ov
+m-1
+l11,2
+r2
+
+# Left window history (oldest to newest):
+d/home/rvg/mostro/repos/mostro/pcb/Mostro
+	pcb
+1
+d/home/rvg/mostro/repos/mostro/pcb/Mostro/pcb
+	Main
+1
+d/home/rvg/mostro/repos/mostro/pcb/Mostro/pcb/Main
+	CAM
+2
+d/home/rvg/mostro/repos/mostro/pcb/Mostro/pcb/Main/CAM
+	Print
+2
+d/home/rvg/mostro/repos/mostro/pcb/Mostro/pcb/Main/CAM/Print
+	AssemblyTop.pdf
+4
+d/home/rvg/mostro/repos/mostro/pcb/Mostro/pcb/Main/CAM
+	Print
+2
+d/home/rvg/mostro/repos/mostro/pcb/Mostro/pcb/Main
+	CAM
+2
+d/home/rvg/mostro/repos/mostro/pcb/Mostro/pcb
+	..
+0
+d/home/rvg/mostro/repos/mostro/pcb/Mostro
+	Mostro.Main_PADS93.Main.db
+9
+d/home/rvg/mostro/repos/mostro/pcb
+	qq
+2
+d/home/rvg/mostro/repos/mostro
+	pcb
+5
+d/home/rvg/mostro/repos/mostro/pcb
+	Mostro
+1
+d/home/rvg/mostro/repos/mostro/pcb/Mostro
+	pcb
+1
+d/home/rvg/mostro/repos/mostro/pcb/Mostro/pcb
+	Main
+1
+d/home/rvg/mostro/repos/mostro/pcb/Mostro/pcb/Main
+	CAM
+2
+d/home/rvg/mostro/repos/mostro/pcb/Mostro/pcb/Main/CAM
+	Print
+2
+d/home/rvg/mostro/repos/mostro/pcb/Mostro/pcb/Main/CAM/Print
+	..
+0
+d/home/Rafa/Projects/Active/Phenotypes/notebooks
+	Analisis.ipynb
+6
+d/home/rvg/Projects/mostro/repos/mostro/pcb/Mostro
+	pcb
+1
+d/home/rvg/Projects/mostro/repos/mostro/pcb/Mostro/pcb
+	Main
+1
+d/home/rvg/Projects/mostro/repos/mostro/pcb/Mostro/pcb/Main
+	CAM
+2
+d/home/rvg/Projects/mostro/repos/mostro/pcb/Mostro/pcb/Main/CAM
+	Print
+2
+d/home/rvg/Projects/mostro/repos/mostro/pcb/Mostro/pcb/Main/CAM/Print
+	Bottom(L2).pdf
+5
+d/home/rvg/Projects/mostro/repos/mostro/pcb/Mostro/pcb/Main/CAM
+	Print
+2
+d/home/rvg/Projects/mostro/repos/mostro/pcb/Mostro/pcb/Main
+	CAM
+2
+d/home/rvg/Projects/mostro/repos/mostro/pcb/Mostro/pcb
+	Main
+1
+d/home/rvg/Projects/mostro/repos/mostro/pcb/Mostro
+	Mostro.pdf
+31
+d/home/rvg/Projects/mostro/repos/mostro/pcb
+	Mostro
+1
+d/home/rvg/Projects/mostro/repos/mostro
+	test-firmware
+3
+d/home/rvg/Projects/mostro/repos/mostro/test-firmware
+	release
+2
+d/home/rvg/Projects/mostro/repos/mostro/test-firmware/release
+	OSS MostroV2 Test Guide.pdf
+1
+d/home/rvg/Projects/mostro/repos/mostro/test-firmware
+	docs
+7
+d/home/rvg/Projects/mostro/repos/mostro/test-firmware/docs
+	OSS MostroV3 Test Guide.docx
+20
+d/home/Rafa/Projects/Active/Phenotypes/repo
+	release
+1
+d/home/Rafa/Projects/Active/Phenotypes
+	repo
+2
+d/home/Rafa/Projects/Active
+	Phenotypes
+34
+d/home/Rafa/Projects
+	Active
+4
+d/home/Rafa/Projects/Active
+	Phenotypes
+34
+d/home/Rafa/Projects
+	NO$HOME
+2
+d/home/Rafa
+	Projects
+8
+d/home
+	Rafa
+1
+d/
+	home
+2
+d/home
+	rvg
+2
+d/home/rvg
+	Downloads
+45
+d/home/rvg/Downloads
+	crefvim.zip
+49
+d/home/Rafa/Projects/Active/Phenotypes/notebooks
+	notebooks
+4
+d/home/Rafa/Projects/Active/Phenotypes/notebooks/notebooks
+	README.md
+1
+d/home/Rafa/Projects/Active/Phenotypes/notebooks
+	notebooks
+2
+d/home/Rafa/Projects/Active/Phenotypes/notebooks/notebooks
+	imgs
+1
+d/home/Rafa/Projects/Active/Phenotypes/notebooks
+	library
+3
+d/home/Rafa/Projects/Active/Phenotypes/notebooks/library
+	..
+0
+d/home/Rafa/Projects/Active/Phenotypes/notebooks
+	library
+3
+d/home/Rafa/Projects/Active/Phenotypes
+	repo
+2
+d/home/Rafa/Projects/Active/Phenotypes/repo
+	.git
+1
+d/home/Rafa/Projects/Active/Phenotypes
+	notebooks
+2
+d/home/Rafa/Projects/Active/Phenotypes/notebooks
+	library
+3
+d/home/Rafa/Projects/Active/Phenotypes/notebooks/library
+	docs
+3
+d/home/Rafa/Projects/Active/Phenotypes/notebooks
+	library
+4
+d/home/Rafa/Projects/Active/Phenotypes
+	notebooks
+3
+d/home/Rafa/Projects/Active/Phenotypes/notebooks
+	library
+4
+d/home/Rafa/Projects/Active/Phenotypes
+	repo
+2
+d/home/Rafa/Projects/Active/Phenotypes/repo
+	.git
+1
+d/home/Rafa/Projects/Active/Phenotypes
+	sandbox
+1
+d/home/Rafa/Projects/Active
+	Phenotypes
+23
+d/home/Rafa/Projects/Active/Phenotypes
+	notebooks
+2
+d/home/Rafa/Projects/Active/Phenotypes/notebooks
+	library
+4
+d/home/Rafa/Projects/Active/Phenotypes/notebooks/library
+	src
+7
+d/home/Rafa/Projects/Active/Phenotypes/notebooks/library/src
+	..
+0
+d/home/Rafa/Projects/Active/Phenotypes/notebooks/library
+	.clangd
+2
+d/home/Rafa/Projects/Active/Phenotypes/notebooks/library/.clangd
+	..
+0
+d/home/Rafa/Projects/Active/Phenotypes/notebooks/library
+	bin
+4
+d/home/Rafa/Projects/Active/Phenotypes/repo/notebooks
+	param_hemodinamicos.ipynb
+10
+d/home/Rafa/Projects/Active/Phenotypes/repo
+	notebooks
+3
+d/home/Rafa/Projects/Active/Phenotypes
+	repo
+3
+d/home/Rafa/Projects/Active
+	Cantoalegre
+19
+d/home/Rafa/Projects/Active/Phenotypes/repo
+	notebooks
+3
+d/home/Rafa/Projects/Active/Phenotypes/repo/notebooks
+	param_hemodinamicos.ipynb
+10
+d/home/rvg
+	.config
+19
+d/home
+	rvg
+2
+d/home/rvg
+	.config
+19
+d/home
+	Rafa
+1
+d/home/Rafa
+	Projects
+8
+d/home
+	Rafa
+1
+d/
+	run
+16
+d/run
+	media
+21
+d/run/media
+	rvg
+1
+d/run/media/rvg
+	Rojo
+1
+d/run/media/rvg/Rojo
+	Peliculas
+7
+d/run/media/rvg/Rojo/Peliculas
+	porno
+9
+d/run/media/rvg/Rojo/Peliculas/porno
+	..
+0
+d/home/rvg
+	.config
+15
+d/home/Rafa/Projects/Active/Phenotypes
+	repo
+3
+d/home/Rafa/Projects/Active
+	Phenotypes
+33
+d/home/Rafa/Projects/Active/Phenotypes
+	repo
+3
+d/home/Rafa/Projects/Active/Phenotypes/repo
+	.git
+2
+d/home/Rafa/Projects/Active/Phenotypes
+	repo
+3
+d/home/Rafa/Projects/Active/Phenotypes/repo
+	library
+1
+d/home/Rafa/Projects/Active/Phenotypes/repo/library
+	docs
+6
+d/home/Rafa/Projects/Active/Phenotypes/repo/library/docs
+	html
+1
+d/home/Rafa/Projects/Active/Phenotypes/repo/library/docs/html
+	index.html
+38
+d
+
+# Right window history (oldest to newest):
+D/home/Rafa/Projects/Active/Explora
+	MusicaElectronica
+1
+D/home/Rafa/Projects/Active/Explora/MusicaElectronica
+	repo_dani
+7
+D/home/Rafa/Projects/Active/Explora/MusicaElectronica/repo_dani
+	abstractions
+1
+D/home/Rafa/Projects/Active/Explora/MusicaElectronica/repo_dani/abstractions
+	..
+0
+D/home/Rafa/Projects/Active/Explora/MusicaElectronica/repo_dani
+	melodies
+4
+D/home/Rafa/Projects/Active/Explora/MusicaElectronica
+	repo
+6
+D/home/Rafa/Projects/Active/Explora/MusicaElectronica/repo
+	pd
+4
+D/home/Rafa/Projects/Active/Explora/MusicaElectronica/repo/pd
+	RRR
+1
+D/home/Rafa/Projects/Active/Explora/MusicaElectronica/repo/pd/RRR
+	
+1
+D/home/Rafa/Projects/Active/Explora/MusicaElectronica/repo/pd
+	..
+0
+D/home/Rafa/Projects/Active/Explora/MusicaElectronica/repo
+	pd
+4
+D/home/Rafa/Projects/Active/Explora/MusicaElectronica
+	repo
+6
+D/home/Rafa/Projects/Active/Explora
+	MusicaElectronica
+1
+D/home/Rafa/Projects/Active
+	Celeste
+6
+D/home/Rafa/Projects/Active/Celeste
+	repos
+1
+D/home/Rafa/Projects/Active/Celeste/repos
+	celeste.bkp
+3
+D/home/Rafa/Projects/Active/Celeste/repos/celeste.bkp
+	hardware
+1
+D/home/Rafa/Projects/Active/Celeste/repos/celeste.bkp/hardware
+	datasheets
+1
+D/home/Rafa/Projects/Active/Celeste/repos/celeste.bkp/hardware/datasheets
+	BeagleBoneBlack
+1
+D/home/Rafa/Projects/Active/Celeste/repos/celeste.bkp/hardware/datasheets/BeagleBoneBlack
+	BeagleboneBlackP9HeaderTable.pdf
+4
+D/home/Rafa/Projects/Active
+	..
+0
+D/home/Rafa/Projects
+	Active
+1
+D/home/Rafa/Projects/Active
+	AllegroHelloWorld
+1
+D/home/Rafa/Projects
+	Active
+1
+D/home/Rafa
+	Projects
+13
+D/home
+	Rafa
+1
+D/
+	home
+4
+D/home
+	rvg
+3
+D/home/rvg
+	mostro
+22
+D/home/rvg/mostro
+	repos
+1
+D/home/rvg/mostro/repos
+	celeste
+2
+D/home/rvg/mostro/repos/celeste
+	hardware
+1
+D/home/rvg/mostro/repos/celeste/hardware
+	pcb
+4
+D/home/rvg/mostro/repos/celeste/hardware/pcb
+	Mostro
+1
+D/home/rvg/mostro/repos/celeste/hardware/pcb/Mostro
+	..
+0
+D/home/rvg/mostro/repos/celeste/hardware/pcb
+	Mostro
+1
+D/home/rvg/mostro/repos/celeste/hardware
+	pcb
+4
+D/home/rvg/mostro/repos/celeste
+	hardware
+1
+D/home/rvg/mostro/repos
+	celeste
+2
+D/home/rvg/mostro
+	OSS MostroV2 - PCB Hot Fixes v2.0.pdf
+4
+D/home/rvg
+	mostro
+18
+D/home
+	Rafa
+1
+D/home/Rafa
+	AudioStuff
+3
+D/home/Rafa/AudioStuff
+	synchronyzing_audio_and_midi.pdf
+20
+D/home/Rafa
+	AudioStuff
+3
+D/home
+	rvg
+2
+D/home/rvg
+	SoundVoid
+10
+D/home/rvg/SoundVoid
+	repo
+1
+D/home/rvg/SoundVoid/repo
+	library
+4
+D/home/rvg/SoundVoid/repo/library
+	messaging.c
+8
+D/home/rvg/SoundVoid/repo
+	library
+4
+D/home/rvg/SoundVoid
+	repo
+1
+D/home/rvg
+	SoundVoid
+12
+D/home
+	..
+0
+D/
+	run
+12
+D/run
+	media
+11
+D/run/media
+	rvg
+1
+D/run/media/rvg
+	Rojo
+1
+D/run/media/rvg/Rojo
+	Installers
+4
+D/run/media/rvg/Rojo/Installers
+	..
+0
+D/run/media/rvg/Rojo
+	Installers
+4
+D/run/media/rvg/Rojo/Installers
+	..
+0
+D/run/media/rvg/Rojo
+	AudioSamples
+2
+D/run/media/rvg/Rojo/AudioSamples
+	..
+0
+D/run/media/rvg/Rojo
+	00.DONT_DELETE
+1
+D/run/media/rvg/Rojo/00.DONT_DELETE
+	..
+0
+D/run/media/rvg/Rojo
+	Gozamaritano
+3
+D/run/media/rvg/Rojo/Gozamaritano
+	..
+0
+D/run/media/rvg/Rojo
+	Installers
+4
+D/run/media/rvg/Rojo/Installers
+	Lenovo Thinkpad
+2
+D/run/media/rvg/Rojo/Installers/Lenovo Thinkpad
+	..
+0
+D/run/media/rvg/Rojo/Installers
+	Lenovo Thinkpad
+2
+D/run/media/rvg/Rojo
+	Installers
+4
+D/run/media/rvg/Rojo/Installers
+	Lenovo Thinkpad
+2
+D/run/media/rvg/Rojo/Installers/Lenovo Thinkpad
+	README.md
+3
+D/run/media/rvg/Rojo/Installers
+	Warblade Full
+12
+D/run/media/rvg/Rojo/Installers/Warblade Full
+	..
+0
+D/run/media/rvg/Rojo/Installers
+	audio
+16
+D/run/media/rvg/Rojo/Installers/audio
+	Bitwig
+3
+D/run/media/rvg/Rojo/Installers/audio/Bitwig
+	Installer
+2
+D/run/media/rvg/Rojo/Installers/audio/Bitwig/Installer
+	PKGBUILD
+1
+D/run/media/rvg/Rojo/Installers/audio/Bitwig/Installer/PKGBUILD
+	PKGBUILD
+2
+D/run/media/rvg/Rojo/Installers/audio/Bitwig/Installer
+	PKGBUILD
+1
+D/run/media/rvg/Rojo/Installers/audio/Bitwig/Installer/PKGBUILD
+	src
+1
+D/run/media/rvg/Rojo/Installers/audio/Bitwig/Installer/PKGBUILD/src
+	..
+0
+D/run/media/rvg/Rojo/Installers/audio/Bitwig/Installer/PKGBUILD
+	PKGBUILD
+2
+D/run
+	..
+0
+D/home/rvg/.vifm
+	..
+0
+D/home/rvg
+	..
+0
+D/home
+	Rafa
+1
+D/home/Rafa
+	ProgrammingStuff
+13
+D/home/Rafa/ProgrammingStuff
+	C
+1
+D/home/Rafa/ProgrammingStuff/C
+	ModernC.pdf
+2
+D/home/Rafa/ProgrammingStuff
+	C
+1
+D/home/Rafa/ProgrammingStuff/C
+	..
+0
+D/home/Rafa/ProgrammingStuff
+	C
+1
+D/home/Rafa/ProgrammingStuff/C
+	ModernC_2nd_edition.pdf
+4
+D/home/Rafa/ProgrammingStuff
+	C
+1
+D/home/Rafa/ProgrammingStuff/C
+	ModernC_2nd_edition.pdf
+4
+D/home/Rafa/ProgrammingStuff
+	Zed Shaw - Learn Python The Hard Way (2013, Addison-Wesley).pdf
+14
+D
+
+# Command line history (oldest to newest):
+:!freecad %
+:!e
+:!echo %d | xclip
+:!echo %d 
+:!echo %d | xclip %i
+:!echo %c:p
+:Q
+:!echo %c:p | xclip %i
+:! echo "aaaa"
+:!echo " uuuu"
+:mkdir Con Viviana
+:copy
+:mkdir abstractions
+:!echo %d
+:!echo "aaaaa" | clip
+:!echo "aaaaa" | xclip
+:!echo "aaaa"
+:!echo "aaaaaaa"
+:!echo "wwwww" | xclip
+:echo
+:!echo "aaa" | xclip
+:!echo "aaa"
+:!echo "aaa" | xclip 
+:!echo "www" | xclip 
+:!echo "wqw" | xclip 
+:!echo -n "wqw" | xclip 
+:! echo "wqwqwqw" | xclip
+:! echo "wqwqwqw" | xclip -verbose
+:! echo "wqwqwqw" | xclip -selection clipboard -verbose
+:! echo "121212" | xclip -selection clipboard -verbose
+:! echo "121212" | xclip -selection clipboard 
+:!gimp %f
+:cd ~/Downloads/
+:sort
+:cd /run/media/rvg/Rojo/
+:cd /run/media/rvg/
+:mkdir codec-wm8732-driver
+::q
+:cd /run/media/rvg/Azul/
+:cd ~
+:!zathura %
+:!xdg-open .
+:cd
+:mkdir VisualizacionOndas
+:mkdir kicad.old
+:mkdir kicad
+:nautilus .
+:!nautilus .
+:mkdir repo
+:wq
+:w
+:cd ~/mostro/repos/celeste/hardware/pcb/
+:file
+:mkdir backups
+:open .
+:!opne .
+:!open .
+:mkdir example_update_package
+:mkdir uncompressed
+:touch messages.h
+:cd ~/.vifm/
+:cd ~/.tr
+:set trashdir?
+:sort 
+:!extract %
+:mkdir library
+:cd x-special/nautilus-clipboard
+:q
+
+# Search history (oldest to newest):
+/mostro
+/pub
+/wired
+/beat
+/sam
+/Sam
+/jack
+/wm87
+/cel
+/ou
+/celjj
+/so
+/soc
+/arc
+/bo
+/green
+/am33xx
+/bone
+/doc
+/arm
+/devi
+/tree
+/sou
+/sound
+/casp
+/simple
+/////////`/6
+/q
+/prog
+/mega
+/transf
+/els:q
+/pdf
+/audi
+/exte
+/ti-proc
+/old
+/expl
+/me
+/bit
+/web
+/mos
+/rafa
+/pr
+/vi
+/dwn
+/down
+/modern
+/pro
+/index
+
+# Prompt history (oldest to newest):
+pCon Viviana
+p1
+p1.mp4
+p2.mp4
+pvideoplayback?id=37fe9f8b8d89035f&itag=59&source=webdrive&requiressl=yes&ttl=transient&mm=30&mn=sn-5hne6ne7&ms=nxu&mv=u&pl=48&ei=hLEpWbK5IZLuqAXpnaqYBQ&driveid=0B__kRijxK6NQY0x
+prepos
+pcodec-wm8731-driver
+pdriver-tlv320aic3104-codec
+pdriver-wm8731-codec
+pdriver-mcasp
+p01-linux-kernel-slides.pdf
+p02-Venkateswaran - Essential Linux Device Drivers (Prentice, 2008).pdf
+p03-writing-an-alsa-driver.pdf
+p04-alsa-driver-api.pdf
+pam3358.pdf
+pLogoMonociclo.png
+plogoMonociclo.png
+pdb-backup.sh
+pdb-load-structure.js
+pdb-run-migration.js
+pREADME_integration.md
+p48k-16bit.wav
+p48k-24bit.wav
+p48k-32bit.wav
+p96k-16bit.wav
+p96k-24bit.wav
+p96k-32bit.wav
+pmain.pd
+pplain_array_inserts.200k.json
+phashmap_murmur_inserts.200k.json
+phashmap_int_inserts.200k.json
+pplain_array_inserts.fibo.json
+phashmap_int_inserts.fibo.200k.json
+phashmap_murmur_inserts.fibo.200k.json
+pplain_array_inserts.fibo.200k.json
+phashmap_int_inserts.json
+phashmap_murmur_inserts.json
+pplain_array_inserts.json
+phashmap_int_inserts.fibo.500kjson
+phashmap_murmur_inserts.fibo.500k.json
+pplain_array_inserts.fibo.500k.json
+pComm.hpp
+pGUI.hpp
+pKnob.hpp
+pMemoryBarrier.hpp
+pOscilloscope.hpp
+pPanel.hpp
+pRingBuffer.hpp
+pSendmail.hpp
+pShapedButton.hpp
+pTextlabel.hpp
+pTutorial.hpp
+pconstants.hpp
+putil.hpp
+pModernC_1st_edition.pdf
+pModernC_2nd_edition.pdf
+pModernC_2nd_edition_code.zip
+
+# Registers:
+""/home/rvg/.local/share/vifm/Trash/000_.clang-format
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/home/rvg/.local/share/vifm/Trash/000_Con
+	/home/rvg/Bitwig Studio/Projects/Con
+t/home/rvg/.local/share/vifm/Trash/000_20170331
+	/home/rvg/Bitwig Studio/Projects/Con Viviana/V/exported/20170331
+t/home/rvg/.local/share/vifm/Trash/000_Master.ogg
+	/home/Rafa/config/vifm/Master.ogg
+t/home/rvg/.local/share/vifm/Trash/000_pcb.dxf~
+	/home/rvg/Desktop/pcb.dxf~
+t/home/rvg/.local/share/vifm/Trash/000_dev
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/linux-filesystem/vendors/dev
+t/home/rvg/.local/share/vifm/Trash/000_etc
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/linux-filesystem/vendors/etc
+t/home/rvg/.local/share/vifm/Trash/000_home
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/linux-filesystem/vendors/home
+t/home/rvg/.local/share/vifm/Trash/000_lib
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/linux-filesystem/vendors/lib
+t/home/rvg/.local/share/vifm/Trash/000_media
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/linux-filesystem/vendors/media
+t/home/rvg/.local/share/vifm/Trash/000_mnt
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/linux-filesystem/vendors/mnt
+t/home/rvg/.local/share/vifm/Trash/000_root
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/linux-filesystem/vendors/root
+t/home/rvg/.local/share/vifm/Trash/000_run
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/linux-filesystem/vendors/run
+t/home/rvg/.local/share/vifm/Trash/000_sbin
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/linux-filesystem/vendors/sbin
+t/home/rvg/.local/share/vifm/Trash/000_srv
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/linux-filesystem/vendors/srv
+t/home/rvg/.local/share/vifm/Trash/000_sys
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/linux-filesystem/vendors/sys
+t/home/rvg/.local/share/vifm/Trash/000_tmp
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/linux-filesystem/vendors/tmp
+t/home/rvg/.local/share/vifm/Trash/000_usr
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/linux-filesystem/vendors/usr
+t/home/rvg/.local/share/vifm/Trash/000_var
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/linux-filesystem/vendors/var
+t/home/rvg/.local/share/vifm/Trash/000_build_kernel.sh
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/build_kernel.sh
+t/home/rvg/.local/share/vifm/Trash/000_readme.md
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/readme.md
+t/home/rvg/.local/share/vifm/Trash/000_rebuild.sh
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/rebuild.sh
+t/home/rvg/.local/share/vifm/Trash/000_rebuild_modules.sh
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/rebuild_modules.sh
+t/home/rvg/.local/share/vifm/Trash/000_audio-codec-proto-manual-v100.pdf
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/audio-codec-driver/docs/audio-codec-proto-manual-v100.pdf
+t/home/rvg/.local/share/vifm/Trash/000_WM8731_v4.9.pdf
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/audio-codec-driver/docs/WM8731_v4.9.pdf
+t/home/rvg/.local/share/vifm/Trash/000_logic_analyzer_wm8731.ods
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/audio-codec-driver/docs/logic_analyzer_wm8731.ods
+t/home/rvg/.local/share/vifm/Trash/000_snd-soc-wm8731.ko
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/audio-codec-driver/snd-soc-wm8731.ko
+t/home/rvg/.local/share/vifm/Trash/000_wm8731.c
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/audio-codec-driver/wm8731.c
+t/home/rvg/.local/share/vifm/Trash/000_wm8731.c.original
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/audio-codec-driver/wm8731.c.original
+t/home/rvg/.local/share/vifm/Trash/000_wm8731.h
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/audio-codec-driver/wm8731.h
+t/home/rvg/.local/share/vifm/Trash/000_wm8731.o
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/audio-codec-driver/wm8731.o
+t/home/rvg/.local/share/vifm/Trash/000_snd-soc-tlv320aic3x.ko
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/audio-codec-driver/codec-tlv320aic3104-driver/snd-soc-tlv320aic3x.ko
+t/home/rvg/.local/share/vifm/Trash/001_snd-soc-wm8731.ko
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/audio-codec-driver/driver-tlv320aic3104-codec/snd-soc-wm8731.ko
+t/home/rvg/.local/share/vifm/Trash/001_wm8731.o
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/audio-codec-driver/driver-wm8731-codec/wm8731.o
+t/home/rvg/.local/share/vifm/Trash/000_recorded.wav
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/audio-driver/repo/recorded.wav
+t/home/rvg/.local/share/vifm/Trash/001_tags
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/audio-driver/tags
+t/home/rvg/.local/share/vifm/Trash/000_Knob.SLDPRT
+	/home/rvg/Mostro/repos/chasis/Output/Keycaps/Knob.SLDPRT
+t/home/rvg/.local/share/vifm/Trash/000_hello-world-benchmark
+	/home/Rafa/Projects/Active/SoundVoid/repo/benchmarks/build/hello-world-benchmark
+t/home/rvg/.local/share/vifm/Trash/000_CMakeFiles
+	/home/Rafa/Projects/Active/SoundVoid/repo/benchmarks/build/CMakeFiles
+t/home/rvg/.local/share/vifm/Trash/000_CMakeCache.txt
+	/home/Rafa/Projects/Active/SoundVoid/repo/benchmarks/build/CMakeCache.txt
+t/home/rvg/.local/share/vifm/Trash/000_Makefile
+	/home/Rafa/Projects/Active/SoundVoid/repo/benchmarks/build/Makefile
+t/home/rvg/.local/share/vifm/Trash/000_cmake_install.cmake
+	/home/Rafa/Projects/Active/SoundVoid/repo/benchmarks/build/cmake_install.cmake
+t/home/rvg/.local/share/vifm/Trash/000_LinuxFromScratch
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/stuff/LinuxFromScratch
+t/home/rvg/.local/share/vifm/Trash/000_Starterware.ti
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/stuff/Starterware.ti
+t/home/rvg/.local/share/vifm/Trash/000_ti-processor-sdk-linux-am335x-evm-04.00.00.04-Linux-x86-Install.bin
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/stuff/ti-processor-sdk-linux-am335x-evm-04.00.00.04-Linux-x86-Install.bin
+t/home/rvg/.local/share/vifm/Trash/000_ti-processor-sdk-linux-am335x-evm-04.00.00.04
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/stuff/ti-processor-sdk-linux-am335x-evm-04.00.00.04
+t/home/rvg/.local/share/vifm/Trash/000_ycm_extra_conf.py
+	/home/Rafa/Projects/Active/Explora/repos/gui/ycm_extra_conf.py
+t/home/rvg/.local/share/vifm/Trash/001_tags
+	/home/Rafa/Projects/Active/Explora/repos/gui/tags
+t/home/rvg/.local/share/vifm/Trash/000_compile_commands.json
+	/home/Rafa/Projects/Active/cppTutorial/repo/compile_commands.json
+t/home/rvg/.local/share/vifm/Trash/000_tags
+	/home/Rafa/Projects/Active/Explora/MusicaElectronica/repo/pd/tags
+t/home/rvg/.local/share/vifm/Trash/000_send.pd
+	/home/Rafa/Projects/Active/Explora/MusicaElectronica/repo/pd/RRR/send.pd
+t/home/rvg/.local/share/vifm/Trash/000_send2.pd
+	/home/Rafa/Projects/Active/Explora/MusicaElectronica/repo/pd/RRR/send2.pd
+t/home/rvg/.local/share/vifm/Trash/000_RRR
+	/home/Rafa/Projects/Active/Explora/MusicaElectronica/repo/pd/RRR
+t/home/rvg/.local/share/vifm/Trash/000_48k-16bit.wav
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/audio-drivers/utils/48k-16bit.wav
+t/home/rvg/.local/share/vifm/Trash/000_48k-24bit.wav
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/audio-drivers/utils/48k-24bit.wav
+t/home/rvg/.local/share/vifm/Trash/000_48k-32bit.wav
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/audio-drivers/utils/48k-32bit.wav
+t/home/rvg/.local/share/vifm/Trash/000_96k-16bit.wav
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/audio-drivers/utils/96k-16bit.wav
+t/home/rvg/.local/share/vifm/Trash/000_96k-24bit.wav
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/audio-drivers/utils/96k-24bit.wav
+t/home/rvg/.local/share/vifm/Trash/000_short.wav
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/celeste/repos/audio-drivers/utils/short.wav
+t/home/rvg/.local/share/vifm/Trash/000_hashmap_int_inserts_20180916_16:58.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/hashmap_int_inserts_20180916_16:58.json
+t/home/rvg/.local/share/vifm/Trash/000_hashmap_int_inserts_20180916_17:02.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/hashmap_int_inserts_20180916_17:02.json
+t/home/rvg/.local/share/vifm/Trash/000_hashmap_int_inserts_20180916_17:04.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/hashmap_int_inserts_20180916_17:04.json
+t/home/rvg/.local/share/vifm/Trash/000_hashmap_int_inserts_20180916_17:05.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/hashmap_int_inserts_20180916_17:05.json
+t/home/rvg/.local/share/vifm/Trash/000_hashmap_int_inserts_20180916_17:06.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/hashmap_int_inserts_20180916_17:06.json
+t/home/rvg/.local/share/vifm/Trash/000_hashmap_int_inserts_20180916_17:07.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/hashmap_int_inserts_20180916_17:07.json
+t/home/rvg/.local/share/vifm/Trash/000_hashmap_int_inserts_20180916_17:12.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/hashmap_int_inserts_20180916_17:12.json
+t/home/rvg/.local/share/vifm/Trash/000_hashmap_int_inserts_20180916_17:15.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/hashmap_int_inserts_20180916_17:15.json
+t/home/rvg/.local/share/vifm/Trash/000_hashmap_murmur_inserts_20180916_16:58.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/hashmap_murmur_inserts_20180916_16:58.json
+t/home/rvg/.local/share/vifm/Trash/000_hashmap_murmur_inserts_20180916_17:02.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/hashmap_murmur_inserts_20180916_17:02.json
+t/home/rvg/.local/share/vifm/Trash/000_hashmap_murmur_inserts_20180916_17:04.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/hashmap_murmur_inserts_20180916_17:04.json
+t/home/rvg/.local/share/vifm/Trash/000_hashmap_murmur_inserts_20180916_17:05.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/hashmap_murmur_inserts_20180916_17:05.json
+t/home/rvg/.local/share/vifm/Trash/000_hashmap_murmur_inserts_20180916_17:06.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/hashmap_murmur_inserts_20180916_17:06.json
+t/home/rvg/.local/share/vifm/Trash/000_hashmap_murmur_inserts_20180916_17:07.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/hashmap_murmur_inserts_20180916_17:07.json
+t/home/rvg/.local/share/vifm/Trash/000_hashmap_murmur_inserts_20180916_17:12.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/hashmap_murmur_inserts_20180916_17:12.json
+t/home/rvg/.local/share/vifm/Trash/000_hashmap_murmur_inserts_20180916_17:15.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/hashmap_murmur_inserts_20180916_17:15.json
+t/home/rvg/.local/share/vifm/Trash/000_plain_array_inserts_20180916_16:58.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/plain_array_inserts_20180916_16:58.json
+t/home/rvg/.local/share/vifm/Trash/000_plain_array_inserts_20180916_17:02.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/plain_array_inserts_20180916_17:02.json
+t/home/rvg/.local/share/vifm/Trash/000_plain_array_inserts_20180916_17:04.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/plain_array_inserts_20180916_17:04.json
+t/home/rvg/.local/share/vifm/Trash/000_plain_array_inserts_20180916_17:05.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/plain_array_inserts_20180916_17:05.json
+t/home/rvg/.local/share/vifm/Trash/000_plain_array_inserts_20180916_17:06.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/plain_array_inserts_20180916_17:06.json
+t/home/rvg/.local/share/vifm/Trash/000_plain_array_inserts_20180916_17:07.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/plain_array_inserts_20180916_17:07.json
+t/home/rvg/.local/share/vifm/Trash/000_plain_array_inserts_20180916_17:12.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/plain_array_inserts_20180916_17:12.json
+t/home/rvg/.local/share/vifm/Trash/000_plain_array_inserts_20180916_17:15.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/plain_array_inserts_20180916_17:15.json
+t/home/rvg/.local/share/vifm/Trash/000_plain_array_inserts_20180916_17:35.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/plain_array_inserts_20180916_17:35.json
+t/home/rvg/.local/share/vifm/Trash/000_plain_array_inserts_20180916_19:25.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/plain_array_inserts_20180916_19:25.json
+t/home/rvg/.local/share/vifm/Trash/000_plain_array_inserts_20180916_19:28.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/plain_array_inserts_20180916_19:28.json
+t/home/rvg/.local/share/vifm/Trash/000_plain_array_inserts_20180916_19:30.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/plain_array_inserts_20180916_19:30.json
+t/home/rvg/.local/share/vifm/Trash/000_plain_array_inserts_20180916_19:31.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/plain_array_inserts_20180916_19:31.json
+t/home/rvg/.local/share/vifm/Trash/000_plain_array_inserts_20180916_19:32.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/plain_array_inserts_20180916_19:32.json
+t/home/rvg/.local/share/vifm/Trash/000_plain_array_inserts_20180916_19:35.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/plain_array_inserts_20180916_19:35.json
+t/home/rvg/.local/share/vifm/Trash/000_plain_array_inserts_20180916_19:36.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/plain_array_inserts_20180916_19:36.json
+t/home/rvg/.local/share/vifm/Trash/000_plain_array_inserts.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/plain_array_inserts.json
+t/home/rvg/.local/share/vifm/Trash/000_hashmap_murmur_inserts.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/hashmap_murmur_inserts.json
+t/home/rvg/.local/share/vifm/Trash/000_hashmap_int_inserts.json
+	/home/Rafa/Projects/Active/SoundVoid/repo/measurements/hashmap/results/hashmap_int_inserts.json
+t/home/rvg/.local/share/vifm/Trash/000_MOSTRO_firmware_v2.0.tgz
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/firmware-updater/MOSTRO_firmware_v2.0.tgz
+t/home/rvg/.local/share/vifm/Trash/000_2019_01_11_oss_wp.sql.gz
+	/home/Rafa/Backups/bkps/OuterSpaceSounds/2019_01_11_oss_wp.sql.gz
+t/home/rvg/.local/share/vifm/Trash/000_2019_04_10_files.tgz
+	/home/Rafa/Backups/bkps/OuterSpaceSounds/2019_04_10_files.tgz
+t/home/rvg/.local/share/vifm/Trash/000_tags
+	/home/Rafa/config/pygrid/tags
+t/home/rvg/.local/share/vifm/Trash/000_Beagle
+	/home/rvg/mostro/datasheets/Beagle
+t/home/rvg/.local/share/vifm/Trash/000_tags
+	/home/Rafa/Projects/Active/Phenotypes/notebooks/tags
+t/home/rvg/.local/share/vifm/Trash/000_bin
+	/home/Rafa/Projects/Active/Phenotypes/repo/bin
+t/home/rvg/.local/share/vifm/Trash/000_.clangd
+	/home/Rafa/Projects/Active/Phenotypes/notebooks/library/.clangd
+t/home/rvg/.local/share/vifm/Trash/000_.clang-format
+	/home/Rafa/Projects/Active/Phenotypes/notebooks/library/.clang-format
+
+# State:
+f
+i1
+[.0
+[F
+F
+I1
+].1
+]F
+s1

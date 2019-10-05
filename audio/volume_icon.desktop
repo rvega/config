@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=true
+Exec=/home/Rafa/config/audio/volume_icon.sh
+Name=Volume Icon
+Comment=Set volume icon and keys to correct sound card
+Icon=alsamixergui

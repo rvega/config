@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=true
+Exec=/home/Rafa/config/key-remap/keyboard_microsoft.sh
+Name=Keyboard Microsoft Map
+Comment=Switch some keys in Microsoft keyboards
+Icon=input-keyboard

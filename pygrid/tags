@@ -1,0 +1,64 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/75ba24d4/
+0	pygrid.json	/^      "0": "cycle-monitor"$/;"	s	object:keys.commands
+0	pygrid.json	/^      0,$/;"	n	array:default.padding
+1	pygrid.json	/^      0,$/;"	n	array:default.padding
+2	pygrid.json	/^      0,$/;"	n	array:default.padding
+3	pygrid.json	/^      0$/;"	n	array:default.padding
+7	pygrid.json	/^      "7": "topleft",$/;"	s	object:keys.commands
+8	pygrid.json	/^      "8": "top",$/;"	s	object:keys.commands
+9	pygrid.json	/^      "9": "topright",$/;"	s	object:keys.commands
+CONFIG_PATH	src/pygrid.py	/^CONFIG_PATH = os.path.expanduser('~\/.config\/pygrid.json')$/;"	v
+Configuration	src/README.md	/^#### Configuration ####$/;"	t
+Credit & License	src/README.md	/^#### Credit & License ####$/;"	t
+DEFAULT_CONFIG	src/pygrid.py	/^DEFAULT_CONFIG = {$/;"	v
+Default Shortcuts	src/README.md	/^#### Default Shortcuts ####$/;"	t
+FILTERS	src/pygrid.py	/^    FILTERS = {$/;"	v	class:PyGrid
+Installation on Ubuntu	src/README.md	/^#### Installation on Ubuntu ####$/;"	t
+PHONY	Makefile	/^PHONY:install$/;"	t
+PyGrid	src/README.md	/^## PyGrid ##$/;"	s
+PyGrid	src/pygrid.py	/^class PyGrid(object):$/;"	c
+Requirements	src/README.md	/^#### Requirements ####$/;"	t
+Seq	src/pygrid.py	/^Seq = namedtuple('Seq', ['x1','x2', 'y1', 'y2', 'w', 'h'])$/;"	v
+__init__	src/pygrid.py	/^    def __init__(self):$/;"	m	class:PyGrid
+_bind_keys	src/pygrid.py	/^    def _bind_keys(self):$/;"	m	class:PyGrid
+_center	src/pygrid.py	/^def _center(p1, p2):$/;"	f
+_check_event	src/pygrid.py	/^    def _check_event(self, source, condition, handle=None):$/;"	m	class:PyGrid
+_cycle_monitor	src/pygrid.py	/^    def _cycle_monitor(self, screen, window):$/;"	m	class:PyGrid
+_generate_sequence_percents	src/pygrid.py	/^    def _generate_sequence_percents(self, workarea, command, config):$/;"	m	class:PyGrid
+_get_active_window	src/pygrid.py	/^    def _get_active_window(self, screen):$/;"	m	class:PyGrid
+_get_config	src/pygrid.py	/^    def _get_config(self, monitorid=0):$/;"	m	class:PyGrid
+_get_seq_distances	src/pygrid.py	/^    def _get_seq_distances(self, wf, seqs):$/;"	m	class:PyGrid
+_get_workarea	src/pygrid.py	/^    def _get_workarea(self, screen, monitorid, config):$/;"	m	class:PyGrid
+_handle_event	src/pygrid.py	/^    def _handle_event(self, command):$/;"	m	class:PyGrid
+_iter_percent	src/pygrid.py	/^def _iter_percent(divs):$/;"	f
+_maximize	src/pygrid.py	/^    def _maximize(self, window):$/;"	m	class:PyGrid
+_move_window	src/pygrid.py	/^    def _move_window(self, window, seq):$/;"	m	class:PyGrid
+_rstr	src/pygrid.py	/^def _rstr(rect):$/;"	f
+_seqp_to_seq	src/pygrid.py	/^    def _seqp_to_seq(self, seqp, workarea, config):$/;"	m	class:PyGrid
+accelerator	pygrid.json	/^    "accelerator": "<Ctrl><Alt><Mod4>",$/;"	s	object:keys
+commands	pygrid.json	/^    "commands": {$/;"	o	object:keys
+default	pygrid.json	/^  "default": {$/;"	o
+i	pygrid.json	/^      "i": "middle",$/;"	s	object:keys.commands
+install	Makefile	/^install:$/;"	t
+j	pygrid.json	/^      "j": "bottomleft",$/;"	s	object:keys.commands
+k	pygrid.json	/^      "k": "bottom",$/;"	s	object:keys.commands
+keys	pygrid.json	/^  "keys": {$/;"	o
+l	pygrid.json	/^      "l": "bottomright",$/;"	s	object:keys.commands
+maxheight	pygrid.json	/^    "maxheight": 0.67,$/;"	n	object:default
+maxwidth	pygrid.json	/^    "maxwidth": 0.67,$/;"	n	object:default
+minheight	pygrid.json	/^    "minheight": 0.33,$/;"	n	object:default
+minwidth	pygrid.json	/^    "minwidth": 0.25,$/;"	n	object:default
+o	pygrid.json	/^      "o": "right",$/;"	s	object:keys.commands
+padding	pygrid.json	/^    "padding": [$/;"	a	object:default
+snaptocursor	pygrid.json	/^    "snaptocursor": false,$/;"	b	object:default
+spacing	pygrid.json	/^    "spacing": 1,$/;"	n	object:default
+start	src/pygrid.py	/^    def start(self):$/;"	m	class:PyGrid
+u	pygrid.json	/^      "u": "left",$/;"	s	object:keys.commands
+xdivs	pygrid.json	/^    "xdivs": 8,$/;"	n	object:default
+ydivs	pygrid.json	/^    "ydivs": 2$/;"	n	object:default

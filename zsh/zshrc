@@ -1,0 +1,171 @@
+# Load zgen
+source "${HOME}/Config/zsh/zgen/zgen.zsh"
+
+# check if there's no init script
+if ! zgen saved; then
+    # plugins
+    zgen oh-my-zsh
+    zgen oh-my-zsh plugins/vi-mode
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/command-not-found
+    zgen oh-my-zsh plugins/colored-man-pages
+    zgen oh-my-zsh plugins/extract
+    zgen load zsh-users/zsh-syntax-highlighting
+
+    # theme
+    zgen load ${HOME}/Config/zsh/rafa.zsh-theme
+
+    # save all to init script
+    zgen save
+fi
+
+# Vim style key bindings
+bindkey -v
+bindkey "fd" vi-cmd-mode
+
+# Shift tab
+bindkey -M menuselect '^[[Z' reverse-menu-complete
+
+# Auto correct
+setopt correct
+
+# Switch keyboard layouts when opening a new terminal
+#if [ -z "$TMUX" ]; then xdotool keydown Super key space keyup Super; fi
+
+# Don't keep duplicates in zsh history
+setopt HIST_IGNORE_ALL_DUPS
+
+# Use Fuzzy Finder to find files/directories with ctrl+t and command
+# history with ctrl+t
+# https://github.com/junegunn/fzf
+export FZF_COMPLETION_TRIGGER='**'
+export FZF_DEFAULT_COMMAND='rg --files --follow --hidden --color=never 2> /dev/null'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# # Use ctrl-t to trigger fzf
+# bindkey '^T' fzf-completion
+# bindkey '^I' $fzf_default_completion
+
+
+###################################################################
+###################################################################
+
+# PATH
+NPM_PACKAGES="${HOME}/.npm-packages/bin"
+FZF_BIN="${HOME}/.config/nvim/pack/minpac/start/fzf/bin" 
+OCENAUDIO_BIN="${HOME}/.config/nvim/pack/minpac/start/fzf/bin" 
+export PATH=$PATH:${NPM_PACKAGES}:${OCENAUDIO_BIN}:${FZF_BIN}
+
+# Alias for cmake in debug and ninja mode
+alias cmake_ninja="cmake -G Ninja -DCMAKE_BUILD_TYPE=debug"
+
+# Alias for gnome-open
+alias open='xdg-open'
+
+# Copy to "clipboard" and not "selection" from xclip command
+alias xclip='xclip -selection clipboard'
+
+# Render a markdown file to html, you need to `pacman -S python-grip`
+alias md2html='grip --export'
+# function md2html(){
+  # grip --export $1
+# }
+
+# Set colors for shell
+BASE16_SHELL="~/Config/gnome-terminal/colors/base16-shell/scripts/base16-atelier-forest.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+# Alias for du (disk usage)
+alias du="du -sk (*|.*) | sort -rn | awk '{\$1=\"\"; print \$0}' | xargs -ia du -hs \"a\""
+
+## dcfldd is frendlier than dd
+alias dd=dcfldd
+
+# mv and cp prompt before overwriting
+alias mv="mv -i"
+alias cp="cp -i"
+
+# Git merge ignoring whitespace
+alias gms='git merge -s recursive -Xignore-space-change'
+
+# Git log
+alias glg='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
+
+# Git show log all branches
+alias glga='glg --branches'
+
+# Git diff 
+alias gd='git difftool'
+
+# Vim diff
+alias vimdiff='=nvim -d'
+
+# Directoyr listings
+alias ll='ls -alh'
+alias l='ls'
+
+# Find 
+function fnd () {
+  fd -H -L $1
+}
+
+# Tree
+alias t='tree -L 2 -C'
+alias tt='tree -L 3 -C'
+alias ttt='tree -C | less' 
+
+# Vim open on same window
+alias nvim='~/Config/neovim/open-with-neovim.sh' 
+alias vim='~/Config/neovim/open-with-neovim.sh' 
+alias vi='~/Config/neovim/open-with-neovim.sh'
+
+# Use vim for everything
+export EDITOR="nvim"
+
+# Close session easily
+alias qq="exit"
+
+# Tmux and tmuxp stuff
+export DISABLE_AUTO_TITLE='true'
+alias tmux="tmux -2 -u attach || tmux -2 -u new"
+alias tmux-save="tmuxp freeze 0"
+alias tmux-load="tmuxp load"
+
+# Nethog
+alias nethogs="sudo nethogs wlp5s0"
+
+# Mount writable by users
+alias mountuser="sudo mount -o gid=storage,fmask=113,dmask=002"
+
+# Use pigz instead of gzip
+alias gzip=pigz
+
+# Do not line wrap when using less
+export LESS=-RS
+
+# Tell make to use parallelism for faster builds
+# export NUMCPUS=`grep -c '^processor' /proc/cpuinfo`
+export NUMCPUS=4
+# export MAKEFLAGS="-j$((NUMCPUS*2)) --load-average=$((NUMCPUS*2))"
+export MAKEFLAGS="-j$((NUMCPUS))"
+
+# VI File Manager
+alias vifm='vifm .'
+
+# Prevent ctrl+s to do that weird thing it does
+# http://raamdev.com/2007/recovering-from-ctrls-in-putty/
+stty ixany
+stty ixoff -ixon
+
+
+# Node version manager
+# For automatic version switching with .nvmrc files in project 
+# directories, do:
+#    npm install -g avn-nvm
+#    cd ~/.nvm
+#    ln -s /usr/share/nvm/nvm.sh
+
+# source /usr/share/nvm/init-nvm.sh
+# [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+

@@ -1,0 +1,48 @@
+map d scroll half-down
+map u scroll half-up
+map <C-d> scroll half-down
+map <C-u> scroll half-up
+
+# Use clipboard instead of x11 selection
+set selection-clipboard clipboard
+
+# Font
+set font                        "Droid Sans Mono Regular 10"
+
+# Colors taken from https://github.com/esn89/base16-zathura
+
+# setting recolor-keep true will keep any color your pdf has.
+# if it is false, it'll just be black and white
+# set recolor-keephue             "true"
+
+# set default-bg                  "#1B1918" #00
+# set default-fg                  "#A8A19F" #01
+
+# set statusbar-fg                "#B0B0B0" #04
+# set statusbar-bg                "#68615E" #01
+
+# set inputbar-bg                 "#1B1918" #00 
+# set inputbar-fg                 "#A8A19F" #02
+
+# set notification-error-bg       "#AC4142" #08
+# set notification-error-fg       "#1B1918" #00
+
+# set notification-warning-bg     "#AC4142" #08
+# set notification-warning-fg     "#1B1918" #00
+
+# set highlight-color             "#F4BF75" #0A
+# set highlight-active-color      "#6A9FB5" #0D
+
+# set completion-highlight-fg     "#303030" #02
+# set completion-highlight-bg     "#75B5AA" #0C
+
+# set completion-bg               "#303030" #02
+# set completion-fg               "#75B5AA" #0C
+
+# set notification-bg             "#90A959" #0B
+# set notification-fg             "#1B1918" #00
+
+# set recolor-lightcolor          "#1B1918" #00
+# set recolor-darkcolor           "#A8A19F" #06
+# set recolor                     "true"
+

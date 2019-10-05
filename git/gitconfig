@@ -1,0 +1,39 @@
+[user]
+	name = Rafael Vega
+	email = contacto@rafaelvega.co
+
+[credential]
+	helper = cache --timeout=3600
+
+[push]
+   default = current
+
+[color]
+   branch = auto
+   diff = auto
+   status = auto
+
+[color "branch"]
+   current = yellow reverse
+   local = yellow
+   remote = green
+
+[color "diff"]
+   meta = yellow bold
+   frag = magenta bold
+   old = red bold
+   new = green bold
+
+[color "status"]
+   added = yellow
+   changed = green
+   untracked = cyan
+
+[core]
+	editor = vim
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	d = difftool

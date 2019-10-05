@@ -1,0 +1,34 @@
+snippet for "for loop"
+for(var ${1:i}=0; $1<${2:l}; ++$1) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet file "A little structure"
+var ${1:Thing} = function() {
+	'use strict';
+
+	var someMemberVariable = 0;
+
+	var init = function(p) {
+		var params = p || {};
+		var defaults = {
+			"some": "defaults"
+		};
+		params = Object.assign(defaults, params);
+
+		${0: // Some more initialization...}
+	}
+
+	var doSomething = function() {
+		// Do something else
+	}
+};
+endsnippet
+
+
+snippet fun "var function"
+var ${1:name} = function $1() {
+	${0}
+}
+endsnippet

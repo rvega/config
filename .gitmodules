@@ -1,0 +1,6 @@
+[submodule "pygrid/src"]
+	path = pygrid/src
+	url = https://github.com/pkkid/pygrid
+[submodule "zsh/zgen"]
+	path = zsh/zgen
+	url = https://github.com/tarjoilija/zgen.git

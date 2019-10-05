@@ -1,0 +1,61 @@
+priority -40
+
+snippet main "main (rvg)"
+#include <stdlib.h>
+
+int main(int argc, char* argv[argc+1]) {
+	$0
+	return EXIT_SUCCESS;
+}
+endsnippet
+
+snippet debug "debug (rvg)"
+debug("${1:%s}", ${2:"Hello"});
+endsnippet
+
+snippet funptr "function pointer typedef (rvg)"
+typedef ${1:void} ${2:function_name}(${3:void});
+endsnippet
+
+snippet fun "function (rvg)"
+static ${1:void} ${2:function_name}(${3:void}) {
+	${0:/* Statements */}
+	return 0;
+}
+endsnippet
+
+snippet for "for loop (rvg)"
+for(size_t ${2:i}=0; $2<${1:count}; ${3:++$2}) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet struct "typedef struct (rvg)"
+struct $1 {
+	${0:/* fileds */};
+};
+typedef struct ${1:name} $1;
+endsnippet
+
+snippet enum "typedef enum (rvg)"
+enum $1 {
+	${0:/* items */}, 
+};
+typedef enum ${1:name} $1;
+endsnippet
+
+snippet new "constructor (rvg)"
+$1* $1_new() { 
+	$1* x = malloc(sizeof(${1:name}));
+	if (!x) { return NULLPTR; }
+
+	${0:/* stuff */}
+	return x;
+};
+endsnippet
+
+snippet X "X macro (rvg)"
+X(${1:name}, "$1")
+endsnippet
+
+# vim:ft=snippets:
