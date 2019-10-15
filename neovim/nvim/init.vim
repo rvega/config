@@ -31,6 +31,7 @@ set textwidth=0 wrapmargin=0
 set hidden
 set scrolloff=10
 set wildmode=longest,list,full
+" set tags=./tags;
 
 " For motions, underscore separates words.
 " For searches with * underscore does not separate words.
@@ -235,7 +236,6 @@ autocmd FileType c setlocal omnifunc=ale#completion#OmniFunc
 " let g:deoplete#enable_at_startup = 1
 " set completeopt-=preview
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toggle Comments.
 "
@@ -271,6 +271,15 @@ nnoremap <silent> <c-a>h :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-a>j :TmuxNavigateDown<cr>
 nnoremap <silent> <c-a>k :TmuxNavigateUp<cr>
 nnoremap <silent> <c-a>l :TmuxNavigateRight<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use TMUX clipboard instead of X11 clipboard. 
+" This is useful for remote ssh+tmux sessions.
+" 
+call minpac#add('roxma/vim-tmux-clipboard')
+
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
