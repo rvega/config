@@ -258,7 +258,6 @@ hi link ALEInfoSign cComment
 " let g:deoplete#enable_at_startup = 1
 " set completeopt-=preview
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toggle Comments.
 "
@@ -295,7 +294,26 @@ nnoremap <silent> <c-a>j :TmuxNavigateDown<cr>
 nnoremap <silent> <c-a>k :TmuxNavigateUp<cr>
 nnoremap <silent> <c-a>l :TmuxNavigateRight<cr>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use TMUX clipboard instead of X11 clipboard. 
+" This is useful for remote ssh+tmux sessions.
+" 
+call minpac#add('roxma/vim-tmux-clipboard')
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Folds for markdown files
+" 
+function MarkdownLevel()
+   let h = matchstr(getline(v:lnum), '^#\+') 
+   if empty(h) 
+      return "=" 
+   else 
+      return ">" . len(h) 
+   endif 
+endfunction
+au BufEnter *.md setlocal foldexpr=MarkdownLevel()  
+au BufEnter *.md setlocal foldmethod=expr 
+>>>>>>> dd4c8fb40b32181bad61229d671444e2fb73f4af
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Better syntax highlighting. Look for other languages here
