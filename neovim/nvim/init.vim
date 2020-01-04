@@ -30,16 +30,49 @@ set foldlevelstart=99
 set textwidth=0 wrapmargin=0
 set hidden
 set scrolloff=10
-set wildmode=longest,list,full
+set wildmenu
+set wildmode=full
+set completeopt=menu,preview,longest
+set tags=./tags;
 
 " For motions, underscore separates words.
 " For searches with * underscore does not separate words.
 "set iskeyword-=_
 "nnoremap * :set iskeyword+=_<cr>*:set iskeyword-=_<cr>:set hlsearch<cr>
 
-" Treat .h files as C code
-autocmd BufEnter *.h :setlocal filetype=c
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Settings particular to a file type 
+" 
 
+" Folds in markdown files
+function MarkdownLevel()
+   let h = matchstr(getline(v:lnum), '^#\+')
+   if empty(h)
+      return "="
+   else
+      return ">" . len(h)
+   endif
+endfunction
+
+augroup markdfown_ft
+  autocmd!
+  autocmd BufEnter *.md setlocal foldexpr=MarkdownLevel()
+  autocmd BufEnter *.md setlocal foldmethod=expr
+  autocmd BufEnter *.md :call WordProcessorMode()<cr>
+augroup END
+
+augroup c_ft
+  autocmd!
+  "autocmd FileType c setlocal omnifunc=ale#completion#OmniFunc
+  autocmd BufEnter *.h :setlocal filetype=c
+augroup END
+
+augroup wiki_ft
+  autocmd!
+  autocmd BufEnter *.wiki inoremap [<space> - [ ] 
+  autocmd BufEnter *.wiki nnoremap <leader>x :VimwikiToggleListItem<cr>
+  autocmd BufEnter *.wiki :call WordProcessorMode()<cr>
+augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
@@ -143,6 +176,7 @@ nnoremap <leader>h :call FSwitch('%', '')<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Line wrapping and vertical movement as a word processor.
 " Better for writing text, not code.
+
 " :call WordProcessorMode()
 
  function! WordProcessorMode()
@@ -155,8 +189,6 @@ nnoremap <leader>h :call FSwitch('%', '')<cr>
    map <buffer> 0 g0
  endfunction
 
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " WIKI
 " Vimwiki keeps to-do lists, notes, etc.
@@ -165,18 +197,10 @@ call minpac#add('vimwiki/vimwiki')
 let g:vimwiki_list = [ { 'path': '/home/Rafa/wiki' } ]
 let g:vimwiki_folding = 'expr'
 
-" Some settings for wiki files
-augroup wiki_ft
-  au!
-  autocmd BufNewFile,BufRead *.wiki inoremap [<space> - [ ] 
-  autocmd BufNewFile,BufRead *.wiki nnoremap <leader>x :VimwikiToggleListItem<cr>
-  autocmd BufNewFile,BufRead *.wiki :call WordProcessorMode()<cr>
-augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Snippets
 "
-
 call minpac#add('SirVer/ultisnips')
 call minpac#add('honza/vim-snippets')
 
@@ -223,9 +247,8 @@ hi link ALEErrorSign cComment
 hi link ALEWarningSign cComment
 hi link ALEInfoSign cComment
 
-set omnifunc=ale#completion#OmniFunc
-autocmd FileType c setlocal omnifunc=ale#completion#OmniFunc
-
+" Maybe set this for python and other ale enabled languages?
+" set omnifunc=ale#completion#OmniFunc
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocomplete 
@@ -273,19 +296,6 @@ nnoremap <silent> <c-a>k :TmuxNavigateUp<cr>
 nnoremap <silent> <c-a>l :TmuxNavigateRight<cr>
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Folds for markdown files
-" 
-function MarkdownLevel()
-   let h = matchstr(getline(v:lnum), '^#\+') 
-   if empty(h) 
-      return "=" 
-   else 
-      return ">" . len(h) 
-   endif 
-endfunction
-au BufEnter *.md setlocal foldexpr=MarkdownLevel()  
-au BufEnter *.md setlocal foldmethod=expr 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Better syntax highlighting. Look for other languages here

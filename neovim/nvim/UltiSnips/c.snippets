@@ -1,5 +1,13 @@
 priority -40
 
+snippet inc "include (rvg)"
+#include "$0"
+endsnippet
+
+snippet incl "include (rvg)"
+#include <$0>
+endsnippet
+
 snippet main "main (rvg)"
 #include <stdlib.h>
 
@@ -18,14 +26,14 @@ typedef ${1:void} ${2:function_name}(${3:void});
 endsnippet
 
 snippet fun "function (rvg)"
-static ${1:void} ${2:function_name}(${3:void}) {
+${4:static }${1:void} ${2:function_name}(${3:void}) {
 	${0:/* Statements */}
 	return 0;
 }
 endsnippet
 
 snippet for "for loop (rvg)"
-for(size_t ${2:i}=0; $2<${1:count}; ${3:++$2}) {
+for(uint ${2:i}=0; $2<${1:n}; ${3:++$2}) {
 	${VISUAL}$0
 }
 endsnippet
