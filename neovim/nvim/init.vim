@@ -300,21 +300,6 @@ nnoremap <silent> <c-a>l :TmuxNavigateRight<cr>
 " 
 call minpac#add('roxma/vim-tmux-clipboard')
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Folds for markdown files
-" 
-function MarkdownLevel()
-   let h = matchstr(getline(v:lnum), '^#\+') 
-   if empty(h) 
-      return "=" 
-   else 
-      return ">" . len(h) 
-   endif 
-endfunction
-au BufEnter *.md setlocal foldexpr=MarkdownLevel()  
-au BufEnter *.md setlocal foldmethod=expr 
->>>>>>> dd4c8fb40b32181bad61229d671444e2fb73f4af
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Better syntax highlighting. Look for other languages here
 " https://github.com/sheerun/vim-polyglot
