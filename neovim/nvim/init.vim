@@ -5,6 +5,7 @@
 packadd minpac
 call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
+" To install/update plugins: call minpac#update() 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Config
@@ -194,7 +195,7 @@ nnoremap <leader>h :call FSwitch('%', '')<cr>
 " Vimwiki keeps to-do lists, notes, etc.
 " <leader>ww
 call minpac#add('vimwiki/vimwiki')
-let g:vimwiki_list = [ { 'path': '/home/Rafa/wiki' } ]
+let g:vimwiki_list = [ { 'path': '/home/oss/wiki' } ]
 let g:vimwiki_folding = 'expr'
 
 
@@ -298,7 +299,7 @@ nnoremap <silent> <c-a>l :TmuxNavigateRight<cr>
 " Use TMUX clipboard instead of X11 clipboard. 
 " This is useful for remote ssh+tmux sessions.
 " 
-call minpac#add('roxma/vim-tmux-clipboard')
+" call minpac#add('roxma/vim-tmux-clipboard')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Better syntax highlighting. Look for other languages here

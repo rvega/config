@@ -2,13 +2,13 @@
 
 # Marks:
 'b
-	/home/rvg/bin/
+	/home/oss/bin/
 	..
-1490399454
+1570280459
 'h
-	/home/rvg/
+	/home/oss/
 	..
-1490399454
+1570280459
 'j
 	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos
 	firmware-updater
@@ -28,42 +28,6 @@ l11,2
 r2
 
 # Left window history (oldest to newest):
-d/home/rvg/mostro/repos/mostro/pcb/Mostro
-	pcb
-1
-d/home/rvg/mostro/repos/mostro/pcb/Mostro/pcb
-	Main
-1
-d/home/rvg/mostro/repos/mostro/pcb/Mostro/pcb/Main
-	CAM
-2
-d/home/rvg/mostro/repos/mostro/pcb/Mostro/pcb/Main/CAM
-	Print
-2
-d/home/rvg/mostro/repos/mostro/pcb/Mostro/pcb/Main/CAM/Print
-	AssemblyTop.pdf
-4
-d/home/rvg/mostro/repos/mostro/pcb/Mostro/pcb/Main/CAM
-	Print
-2
-d/home/rvg/mostro/repos/mostro/pcb/Mostro/pcb/Main
-	CAM
-2
-d/home/rvg/mostro/repos/mostro/pcb/Mostro/pcb
-	..
-0
-d/home/rvg/mostro/repos/mostro/pcb/Mostro
-	Mostro.Main_PADS93.Main.db
-9
-d/home/rvg/mostro/repos/mostro/pcb
-	qq
-2
-d/home/rvg/mostro/repos/mostro
-	pcb
-5
-d/home/rvg/mostro/repos/mostro/pcb
-	Mostro
-1
 d/home/rvg/mostro/repos/mostro/pcb/Mostro
 	pcb
 1
@@ -328,54 +292,45 @@ d/home/Rafa/Projects/Active/Phenotypes/repo/library/docs
 d/home/Rafa/Projects/Active/Phenotypes/repo/library/docs/html
 	index.html
 38
+d/home/oss/Config/vifm
+	Makefile
+6
+d/home/oss
+	.gitattributes
+27
+d/home/oss/mostro/linux-filesystem-4.19
+	oss
+1
+d/home/oss/mostro
+	linux-filesystem
+15
+d/home/oss/mostro/linux-filesystem
+	scripts
+2
+d/home/oss/mostro
+	linux-filesystem
+16
+d/home/oss/mostro/linux-filesystem
+	scripts
+2
+d/home/oss/mostro/linux-filesystem/scripts
+	..
+0
+d/home/oss/mostro/linux-filesystem
+	.gitmodules
+6
+d/home/oss/mostro/linux-kernel
+	.git
+1
+d/home/oss/mostro/linux-kernel-bone
+	deploy
+8
+d/home/oss/mostro/firmware-updater/new_firmware_package
+	zImage
+6
 d
 
 # Right window history (oldest to newest):
-D/home/Rafa/Projects/Active/Explora
-	MusicaElectronica
-1
-D/home/Rafa/Projects/Active/Explora/MusicaElectronica
-	repo_dani
-7
-D/home/Rafa/Projects/Active/Explora/MusicaElectronica/repo_dani
-	abstractions
-1
-D/home/Rafa/Projects/Active/Explora/MusicaElectronica/repo_dani/abstractions
-	..
-0
-D/home/Rafa/Projects/Active/Explora/MusicaElectronica/repo_dani
-	melodies
-4
-D/home/Rafa/Projects/Active/Explora/MusicaElectronica
-	repo
-6
-D/home/Rafa/Projects/Active/Explora/MusicaElectronica/repo
-	pd
-4
-D/home/Rafa/Projects/Active/Explora/MusicaElectronica/repo/pd
-	RRR
-1
-D/home/Rafa/Projects/Active/Explora/MusicaElectronica/repo/pd/RRR
-	
-1
-D/home/Rafa/Projects/Active/Explora/MusicaElectronica/repo/pd
-	..
-0
-D/home/Rafa/Projects/Active/Explora/MusicaElectronica/repo
-	pd
-4
-D/home/Rafa/Projects/Active/Explora/MusicaElectronica
-	repo
-6
-D/home/Rafa/Projects/Active/Explora
-	MusicaElectronica
-1
-D/home/Rafa/Projects/Active
-	Celeste
-6
-D/home/Rafa/Projects/Active/Celeste
-	repos
-1
 D/home/Rafa/Projects/Active/Celeste/repos
 	celeste.bkp
 3
@@ -631,6 +586,51 @@ D/home/Rafa/ProgrammingStuff/C
 D/home/Rafa/ProgrammingStuff
 	Zed Shaw - Learn Python The Hard Way (2013, Addison-Wesley).pdf
 14
+D/home
+	..
+0
+D/
+	home
+4
+D/home
+	oss
+1
+D/home/oss
+	mostro
+11
+D/home/oss/mostro
+	linux-filesystem-4.19
+6
+D/home/oss/mostro/linux-filesystem-4.19
+	oss
+3
+D/home/oss/mostro/linux-filesystem-4.19/oss
+	board
+1
+D/home/oss/mostro/linux-filesystem-4.19/oss/board
+	..
+0
+D/home/oss/mostro/linux-filesystem-4.19/oss
+	board
+1
+D/home/oss/mostro/linux-filesystem-4.19
+	releases
+4
+D/home/oss/mostro/linux-filesystem-4.19/releases
+	..
+0
+D/home/oss/mostro/linux-filesystem-4.19
+	scripts
+5
+D/home/oss/mostro/linux-filesystem-4.19/scripts
+	..
+0
+D/home/oss/mostro/linux-filesystem-4.19
+	scripts
+5
+D/home/oss/mostro
+	..
+0
 D
 
 # Command line history (oldest to newest):
@@ -701,6 +701,7 @@ D
 :!extract %
 :mkdir library
 :cd x-special/nautilus-clipboard
+:!vim %
 :q
 
 # Search history (oldest to newest):
@@ -745,7 +746,6 @@ D
 /me
 /bit
 /web
-/mos
 /rafa
 /pr
 /vi
@@ -754,6 +754,7 @@ D
 /modern
 /pro
 /index
+/mos
 
 # Prompt history (oldest to newest):
 pCon Viviana
@@ -813,9 +814,11 @@ putil.hpp
 pModernC_1st_edition.pdf
 pModernC_2nd_edition.pdf
 pModernC_2nd_edition_code.zip
+pdevice-tree2
+pdevice-tree
 
 # Registers:
-""/home/rvg/.local/share/vifm/Trash/000_.clang-format
+""/home/oss/.local/share/vifm/Trash/000_version
 
 # Directory stack (oldest to newest):
 
@@ -1024,6 +1027,60 @@ t/home/rvg/.local/share/vifm/Trash/000_.clangd
 	/home/Rafa/Projects/Active/Phenotypes/notebooks/library/.clangd
 t/home/rvg/.local/share/vifm/Trash/000_.clang-format
 	/home/Rafa/Projects/Active/Phenotypes/notebooks/library/.clang-format
+t/home/oss/.local/share/vifm/Trash/000_jkjkjkq      ]
+	/home/oss/jkjkjkq      ]
+t/home/oss/.local/share/vifm/Trash/000_device-tree
+	/home/oss/mostro/linux-filesystem-4.19/device-tree
+t/home/oss/.local/share/vifm/Trash/000_tags
+	/home/oss/mostro/linux-filesystem/tags
+t/home/oss/.local/share/vifm/Trash/000_ignore
+	/home/oss/mostro/linux-kernel/ignore
+t/home/oss/.local/share/vifm/Trash/000_3rdparty
+	/home/oss/mostro/linux-kernel/3rdparty
+t/home/oss/.local/share/vifm/Trash/000_dl
+	/home/oss/mostro/linux-kernel/dl
+t/home/oss/.local/share/vifm/Trash/000_patches
+	/home/oss/mostro/linux-kernel/patches
+t/home/oss/.local/share/vifm/Trash/000_repo_maintenance
+	/home/oss/mostro/linux-kernel/repo_maintenance
+t/home/oss/.local/share/vifm/Trash/000_scripts
+	/home/oss/mostro/linux-kernel/scripts
+t/home/oss/.local/share/vifm/Trash/000_tools
+	/home/oss/mostro/linux-kernel/tools
+t/home/oss/.local/share/vifm/Trash/000_KERNEL
+	/home/oss/mostro/linux-kernel/KERNEL
+t/home/oss/.local/share/vifm/Trash/000_deploy
+	/home/oss/mostro/linux-kernel/deploy
+t/home/oss/.local/share/vifm/Trash/000_LICENSE
+	/home/oss/mostro/linux-kernel/LICENSE
+t/home/oss/.local/share/vifm/Trash/000_system.sh.sample
+	/home/oss/mostro/linux-kernel/system.sh.sample
+t/home/oss/.local/share/vifm/Trash/000_system.sh
+	/home/oss/mostro/linux-kernel/system.sh
+t/home/oss/.local/share/vifm/Trash/000_.gitignore
+	/home/oss/mostro/linux-kernel/.gitignore
+t/home/oss/.local/share/vifm/Trash/000_build_deb.sh
+	/home/oss/mostro/linux-kernel/build_deb.sh
+t/home/oss/.local/share/vifm/Trash/000_build_kernel.sh
+	/home/oss/mostro/linux-kernel/build_kernel.sh
+t/home/oss/.local/share/vifm/Trash/000_patch.sh
+	/home/oss/mostro/linux-kernel/patch.sh
+t/home/oss/.local/share/vifm/Trash/000_readme.md
+	/home/oss/mostro/linux-kernel/readme.md
+t/home/oss/.local/share/vifm/Trash/000_version.sh
+	/home/oss/mostro/linux-kernel/version.sh
+t/home/oss/.local/share/vifm/Trash/000_.CC
+	/home/oss/mostro/linux-kernel/.CC
+t/home/oss/.local/share/vifm/Trash/000_kernel_version
+	/home/oss/mostro/linux-kernel/kernel_version
+t/home/oss/.local/share/vifm/Trash/000_boot.vfat
+	/home/oss/mostro/firmware-updater/new_firmware_package/boot.vfat
+t/home/oss/.local/share/vifm/Trash/000_data.vfat
+	/home/oss/mostro/firmware-updater/new_firmware_package/data.vfat
+t/home/oss/.local/share/vifm/Trash/000_sdcard.img
+	/home/oss/mostro/firmware-updater/new_firmware_package/sdcard.img
+t/home/oss/.local/share/vifm/Trash/000_version
+	/home/oss/mostro/firmware-updater/new_firmware_package/version
 
 # State:
 f

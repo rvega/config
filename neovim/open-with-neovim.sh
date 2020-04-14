@@ -7,7 +7,7 @@
 
 if [ $# != 0 ]; then
   # nvr --servername /tmp/$VIM_SERVERNAME --remote-silent "$@"
-  NVIM_LISTEN_ADDRESS=/tmp/$VIM_SERVERNAME nvr -s --remote "$@"
+  NVIM_LISTEN_ADDRESS=/tmp/$VIM_SERVERNAME /home/oss/.local/bin/nvr -s --remote "$@"
 else 
   NVIM_LISTEN_ADDRESS=/tmp/$VIM_SERVERNAME /usr/bin/nvim
 fi
