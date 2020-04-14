@@ -6,8 +6,8 @@
 [ -z "$VIM_SERVERNAME" ] && VIM_SERVERNAME="rvg_vim_server" 
 
 if [ $# != 0 ]; then
-  # nvr --servername /tmp/$VIM_SERVERNAME --remote-silent "$@"
-  NVIM_LISTEN_ADDRESS=/tmp/$VIM_SERVERNAME nvr -s --remote "$@"
+  NVR_BIN=nvr
+  NVIM_LISTEN_ADDRESS=/tmp/${VIM_SERVERNAME} ${NVR_BIN} -s --remote "$@"
 else 
-  NVIM_LISTEN_ADDRESS=/tmp/$VIM_SERVERNAME /usr/bin/nvim
+  NVIM_LISTEN_ADDRESS=/tmp/${VIM_SERVERNAME} /usr/bin/nvim
 fi

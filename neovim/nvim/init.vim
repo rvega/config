@@ -5,6 +5,7 @@
 packadd minpac
 call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
+" To install/update plugins: call minpac#update() 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Config
@@ -325,7 +326,7 @@ nnoremap <silent> <c-a>l :TmuxNavigateRight<cr>
 " Use this only in remote machines. It breaks linewise pasting as described
 " in https://github.com/roxma/vim-tmux-clipboard/issues/4 but it's still
 " useful for remote ssh+tmux sessions.
-"
+
 " call minpac#add('roxma/vim-tmux-clipboard')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
