@@ -1,0 +1,4 @@
+dashboard -layout stack variables expressions source
+dashboard variables -style compact 0
+dashboard source -style height 20
+add-auto-load-safe-path /home

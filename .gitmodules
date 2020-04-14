@@ -4,3 +4,9 @@
 [submodule "zsh/zgen"]
 	path = zsh/zgen
 	url = https://github.com/tarjoilija/zgen.git
+[submodule "gdb-dashboard/src"]
+	path = gdb-dashboard/src
+	url = https://github.com/cyrus-and/gdb-dashboard
+[submodule "vifm/colors"]
+	path = vifm/colors
+	url = https://github.com/vifm/vifm-colors

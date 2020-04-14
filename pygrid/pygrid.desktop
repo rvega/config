@@ -1,8 +1,8 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
 Categories=Utility;
-Comment=Resize windows
-Exec=/home/Rafa/config/pygrid/src/pygrid.py
+Comment=Resize Windows
+Exec=/home/Rafa/config/pygrid/launch.sh
 Name=Pygrid
 StartupNotify=false
 Type=Application

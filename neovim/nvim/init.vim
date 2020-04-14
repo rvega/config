@@ -44,34 +44,11 @@ set tags=./tags;
 " Settings particular to a file type 
 " 
 
-" Folds in markdown files
-function MarkdownLevel()
-   let h = matchstr(getline(v:lnum), '^#\+')
-   if empty(h)
-      return "="
-   else
-      return ">" . len(h)
-   endif
-endfunction
-
-augroup markdfown_ft
-  autocmd!
-  autocmd BufEnter *.md setlocal foldexpr=MarkdownLevel()
-  autocmd BufEnter *.md setlocal foldmethod=expr
-  autocmd BufEnter *.md :call WordProcessorMode()<cr>
-augroup END
 
 augroup c_ft
   autocmd!
   "autocmd FileType c setlocal omnifunc=ale#completion#OmniFunc
   autocmd BufEnter *.h :setlocal filetype=c
-augroup END
-
-augroup wiki_ft
-  autocmd!
-  autocmd BufEnter *.wiki inoremap [<space> - [ ] 
-  autocmd BufEnter *.wiki nnoremap <leader>x :VimwikiToggleListItem<cr>
-  autocmd BufEnter *.wiki :call WordProcessorMode()<cr>
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -124,6 +101,16 @@ nnoremap ]] ][j/{<CR>(
 nnoremap ][ /}<CR>b99]}
 nnoremap [] k$][%?}<CR>
 
+" Increment and decrement numbers
+nnoremap <leader>= <c-a>
+nnoremap <leader>- <c-x>
+
+" This one is useful for splitting strings into array items. Ex:
+" foo = 'a b c d'
+" into
+" foo = ['a', 'b', 'c', 'd']
+nnoremap <leader>s F'i<return><esc>A<return><esc>kV:s/ /', '/g<return>I[<esc>A]<esc>kJ:noh<return>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom text objects
 " 
@@ -148,6 +135,7 @@ call minpac#add('simnalamburt/vim-mundo')
 set undofile
 autocmd BufWritePre /tmp/* setlocal noundofile
 nnoremap <leader>z :MundoToggle<cr>
+let g:mundo_prefer_python3 = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -164,14 +152,20 @@ nmap <leader>t :Files<cr>
 " nmap <leader><tab> <plug>(fzf-maps-n)
 " xmap <leader><tab> <plug>(fzf-maps-x)
 " omap <leader><tab> <plug>(fzf-maps-o)<Paste>
-
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+let g:fzf_preview_window = 'right:50%'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Jump between c and h (companion) files.
 " 
+
 call minpac#add('derekwyatt/vim-fswitch')
 nnoremap <leader>h :call FSwitch('%', '')<cr>
+"autocmd BufEnter *.c let b:fswitchlocs = 'reg:/src/include/,reg:|src|include/**|,ifrel:|/src/|../include|'
 
+" call minpac#add('ericcurtin/CurtineIncSw.vim')
+" nnoremap <leader>h :call CurtineIncSw()<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Line wrapping and vertical movement as a word processor.
@@ -189,14 +183,36 @@ nnoremap <leader>h :call FSwitch('%', '')<cr>
    map <buffer> 0 g0
  endfunction
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" WIKI
-" Vimwiki keeps to-do lists, notes, etc.
-" <leader>ww
-call minpac#add('vimwiki/vimwiki')
-let g:vimwiki_list = [ { 'path': '/home/Rafa/wiki' } ]
-let g:vimwiki_folding = 'expr'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" WIKI
+"" Wiki.vim keeps to-do lists, notes, etc.
+"" <leader>ww
 
+call minpac#add('lervag/wiki.vim')
+let g:wiki_root = '/home/Rafa/wiki'
+let g:wiki_link_target_type = 'md'
+
+let g:wiki_mappings_global = {
+      \ '<plug>(wiki-list-toggle)' : '<leader>x',
+      \}
+
+function! FoldLevel99(timer)
+  setlocal foldlevel=99
+endfunction
+
+augroup markdfown_ft
+  autocmd!
+  autocmd BufEnter *.md :call WordProcessorMode()
+  autocmd BufEnter *.md :call timer_start(100, 'FoldLevel99', {'repeat':1}) 
+augroup END
+
+augroup wiki_ft
+  autocmd!
+  autocmd BufEnter *.wiki :setlocal filetype=markdown
+  autocmd BufEnter *.wiki :call WordProcessorMode()
+  autocmd BufEnter *.wiki :call timer_start(100, 'FoldLevel99', {'repeat':1}) 
+  autocmd BufEnter *.wiki inoremap <buffer> [<space> [ ]<space>
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Snippets
@@ -214,21 +230,20 @@ call minpac#add('dense-analysis/ale')
 let g:ale_linters_explicit = 1
 let g:ale_linters = {
       \ 'c': ['clangd'],
-      \'python': ['flake8'],
+      \'python': ['pycodestyle'],
       \'json': ['prettier']
       \ }
 
 let g:ale_fixers = {
       \'c': ['clang-format'],
-      \'python': ['yapf'],
+      \'cpp': ['clang-format'],
+      \'python': ['autopep8'],
       \'json': ['prettier']
       \}
 
-
-"     \'c': ['clangtidy'],
-"let g:ale_c_clangtidy_checks = ['readability-braces-around-statements']
-
-let g:ale_c_clangformat_options = '-style=file'
+"let g:ale_c_clangformat_options = '-style=file'
+let g:ale_python_pycodestyle_options = '--max-line-length=115'
+let g:ale_python_autopep8_options = '--max-line-length 115'
 
 nmap <leader>f :ALEFix<cr>
 
@@ -258,6 +273,11 @@ hi link ALEInfoSign cComment
 " let g:deoplete#enable_at_startup = 1
 " set completeopt-=preview
 
+" I'm using vim's builtin completion engine. I like it to be case sensitive
+" but other things like search in file stay case insensitive. 
+au InsertEnter * set noignorecase
+au InsertLeave * set ignorecase
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toggle Comments.
 "
@@ -275,6 +295,10 @@ call minpac#add('tpope/vim-commentary')
 "    autocmd FileType apache setlocal commentstring=#\ %s
 " augroup END
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Better support for markdown files
+" 
+call minpac#add('plasticboy/vim-markdown')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ask for sudo password
@@ -298,7 +322,11 @@ nnoremap <silent> <c-a>l :TmuxNavigateRight<cr>
 " Use TMUX clipboard instead of X11 clipboard. 
 " This is useful for remote ssh+tmux sessions.
 " 
-call minpac#add('roxma/vim-tmux-clipboard')
+" Use this only in remote machines. It breaks linewise pasting as described
+" in https://github.com/roxma/vim-tmux-clipboard/issues/4 but it's still
+" useful for remote ssh+tmux sessions.
+"
+" call minpac#add('roxma/vim-tmux-clipboard')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Better syntax highlighting. Look for other languages here

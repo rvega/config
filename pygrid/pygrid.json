@@ -1,7 +1,7 @@
 {
   "default": {
     "maxheight": 0.67,
-    "maxwidth": 0.67,
+    "maxwidth": 1,
     "minheight": 0.33,
     "minwidth": 0.25,
     "padding": [

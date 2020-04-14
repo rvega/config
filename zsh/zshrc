@@ -11,7 +11,7 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/colored-man-pages
     zgen oh-my-zsh plugins/extract
     zgen load zsh-users/zsh-syntax-highlighting
-    zgen load Aloxaf/fzf-tab # FZF
+    # zgen load Aloxaf/fzf-tab # FZF
 
     # theme
     zgen load ${HOME}/Config/zsh/rafa.zsh-theme
@@ -120,6 +120,9 @@ alias ttt='tree -C | less'
 alias nvim='~/Config/neovim/open-with-neovim.sh' 
 alias vim='~/Config/neovim/open-with-neovim.sh' 
 alias vi='~/Config/neovim/open-with-neovim.sh'
+alias v='~/Config/neovim/open-with-neovim.sh'
+alias v='~/Config/neovim/open-with-neovim.sh'
+alias vv='/usr/bin/nvim'
 
 # Use vim for everything
 export EDITOR="nvim"

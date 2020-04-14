@@ -10,12 +10,12 @@
 
 ####
 
-# Capslock as backslash
+# Capslock 
 xmodmap -e "remove lock = Caps_Lock";
 # xmodmap -e "keycode 66 = backslash"
-xmodmap -e "keycode 66 = Control_R NoSymbol Control_R"
+xmodmap -e "keycode 66 = Control_L NoSymbol Control_L"
 
-# PrintSc as Ctrl
-xmodmap -e "keycode 107 = Control_R NoSymbol Control_R"
-xmodmap -e "add control = Control_R"
+# PrintScreen
+xmodmap -e "keycode 107 = Control_L NoSymbol Control_L"
+xmodmap -e "add control = Control_L"
 
