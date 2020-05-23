@@ -40,3 +40,5 @@
 
 [alias]
   d = difftool
+[init]
+	templatedir = ~/Config/git/gittemplate

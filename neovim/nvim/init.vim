@@ -7,6 +7,7 @@ call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 " To install/update plugins: call minpac#update() 
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Config
 " 
@@ -33,8 +34,6 @@ set hidden
 set scrolloff=10
 set wildmenu
 set wildmode=full
-set completeopt=menu,preview,longest
-set tags=./tags;
 
 " For motions, underscore separates words.
 " For searches with * underscore does not separate words.
@@ -43,18 +42,20 @@ set tags=./tags;
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Settings particular to a file type 
-" 
-
 
 augroup c_ft
   autocmd!
-  "autocmd FileType c setlocal omnifunc=ale#completion#OmniFunc
   autocmd BufEnter *.h :setlocal filetype=c
 augroup END
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
 " 
+
+" Training wheels: Don't use backspace repeatedly, use <c-w> or <c-h>
+" inoremap <backspace> <nop>
+
 " Use spacebar as leader
 nnoremap <space> <nop>
 let mapleader=" " 
@@ -65,6 +66,10 @@ noremap fd <esc>:noh<cr>
 noremap! fd <esc>:noh<cr>
 " noremap df <esc>:noh<cr>
 " noremap! df <esc>:noh<cr>
+
+" Ctrl backspace deletes one word in insert mode
+" noremap! <c-backspace> bbb
+" noremap! <backspace> aaa
 
 " Ctrl+v is normally visual block mode, change to leader+v
 noremap <leader>v <C-v>
@@ -103,8 +108,10 @@ nnoremap ][ /}<CR>b99]}
 nnoremap [] k$][%?}<CR>
 
 " Increment and decrement numbers
-nnoremap <leader>= <c-a>
-nnoremap <leader>- <c-x>
+nnoremap <leader>a <c-a>
+nnoremap <leader>x <c-x>
+vnoremap g<leader>a g<c-a>
+vnoremap g<leader>x g<c-x>
 
 " This one is useful for splitting strings into array items. Ex:
 " foo = 'a b c d'
@@ -112,10 +119,47 @@ nnoremap <leader>- <c-x>
 " foo = ['a', 'b', 'c', 'd']
 nnoremap <leader>s F'i<return><esc>A<return><esc>kV:s/ /', '/g<return>I[<esc>A]<esc>kJ:noh<return>
 
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ctags
+"
+" Generate tags manually, externally, with something like 
+" `ctags --recurse -languages=c --languages=c++ ./` 
+"
+" Or, see the automatic git hooks I set up for this in
+" ~/Config/git/gittemplate/hooks
+" Explained here: https://tbaggery.com/2011/08/08/effortless-ctags-with-git.html
+
+" Jump to tag under cursor with <c-[> or g<c-[>, use [t and ]t to jump to other
+" occurences. Also :tag <keyword> is useful
+
+" Look for tags file in file directory or current directory
+" set tags=./tags,tags,/home/rvg/tags
+set tags=./tags,tags
+
+nnoremap <silent> [t :tprevious<CR>
+nnoremap <silent> ]t :tnext<CR>
+nnoremap <silent> [T :tfirst<CR>
+nnoremap <silent> ]T :tlast<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Autocompletion
+
+" Completion case sensitive, other things like search in file stay case
+" insensitive. 
+au InsertEnter * set noignorecase
+au InsertLeave * set ignorecase
+
+set completeopt=menu,longest
+
+" nmap <leader>j :ALEGoToDefinition<cr>
+" nmap <leader>k :ALEFindReferences<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom text objects
 " 
-
 " Allows for user defined text objects
 " See here if more text objects are needed
 " https://github.com/kana/vim-textobj-user/wiki
@@ -127,6 +171,9 @@ call minpac#add('saaguero/vim-textobj-pastedtext')
 
 " f for functions in C, Java and Vimscript. May be extended for more languages.
 call minpac#add('kana/vim-textobj-function')
+call minpac#add('thinca/vim-textobj-function-javascript') " Adds JS support
+call minpac#add('bps/vim-textobj-python')                 " Adds python support
+call minpac#add('kentaro/vim-textobj-function-php')       " Adds php
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -165,8 +212,6 @@ call minpac#add('derekwyatt/vim-fswitch')
 nnoremap <leader>h :call FSwitch('%', '')<cr>
 "autocmd BufEnter *.c let b:fswitchlocs = 'reg:/src/include/,reg:|src|include/**|,ifrel:|/src/|../include|'
 
-" call minpac#add('ericcurtin/CurtineIncSw.vim')
-" nnoremap <leader>h :call CurtineIncSw()<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Line wrapping and vertical movement as a word processor.
@@ -174,15 +219,15 @@ nnoremap <leader>h :call FSwitch('%', '')<cr>
 
 " :call WordProcessorMode()
 
- function! WordProcessorMode()
-   setlocal formatoptions=1
-   setlocal showbreak=
-   map <buffer> j gj
-   map <buffer> k gk
-   map <buffer> $ g$
-   map <buffer> ^ g^
-   map <buffer> 0 g0
- endfunction
+function! WordProcessorMode()
+  setlocal formatoptions=1
+  setlocal showbreak=
+  map <buffer> j gj
+  map <buffer> k gk
+  map <buffer> $ g$
+  map <buffer> ^ g^
+  map <buffer> 0 g0
+endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" WIKI
@@ -193,9 +238,9 @@ call minpac#add('lervag/wiki.vim')
 let g:wiki_root = '/home/Rafa/wiki'
 let g:wiki_link_target_type = 'md'
 
-let g:wiki_mappings_global = {
-      \ '<plug>(wiki-list-toggle)' : '<leader>x',
-      \}
+" let g:wiki_mappings_global = {
+"       \ '<plug>(wiki-list-toggle)' : '<leader>x',
+" \}
 
 function! FoldLevel99(timer)
   setlocal foldlevel=99
@@ -210,10 +255,18 @@ augroup END
 augroup wiki_ft
   autocmd!
   autocmd BufEnter *.wiki :setlocal filetype=markdown
+  autocmd BufEnter *.wiki :setlocal conceallevel=1
   autocmd BufEnter *.wiki :call WordProcessorMode()
   autocmd BufEnter *.wiki :call timer_start(100, 'FoldLevel99', {'repeat':1}) 
   autocmd BufEnter *.wiki inoremap <buffer> [<space> [ ]<space>
 augroup END
+
+" Open file links with xdg-open
+let g:wiki_file_open = 'WikiFileOpen'
+function! WikiFileOpen(...) abort dict
+  silent execute '!xdg-open' fnameescape(self.path) '&'
+  return 1
+endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Snippets
@@ -222,36 +275,39 @@ call minpac#add('SirVer/ultisnips')
 call minpac#add('honza/vim-snippets')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ALE Plugin provides integration with outside tools such as clang-format
-" and gives you omnicompletion <c-x><x-o>, Show errors :lopen, 
-" format code <leader>f, jump to definitions <leader>j, and more.
+" ALE Plugin provides integration with outside tools such as language servers,
+" linters and fixers and gives you a bunch of things. I'm using it to show
+" compiler errors (linting) and automatic code formating (fixing). 
+" :lopen
+" <leader>f
 "
 call minpac#add('dense-analysis/ale')
 
 let g:ale_linters_explicit = 1
 let g:ale_linters = {
       \ 'c': ['clangd'],
-      \'python': ['pycodestyle'],
-      \'json': ['prettier']
+      \'json': ['prettier'],
       \ }
+" \'python': ['pycodestyle'],
+" \'javascript': ['eslint']
 
 let g:ale_fixers = {
       \'c': ['clang-format'],
       \'cpp': ['clang-format'],
-      \'python': ['autopep8'],
-      \'json': ['prettier']
+      \'json': ['prettier'],
+      \'html': ['prettier']
       \}
+" \'python': ['autopep8'],
+" \'javascript': ['eslint']
 
-"let g:ale_c_clangformat_options = '-style=file'
-let g:ale_python_pycodestyle_options = '--max-line-length=115'
-let g:ale_python_autopep8_options = '--max-line-length 115'
+" let g:ale_javascript_eslint_use_global = 1
+" let g:ale_python_pycodestyle_options = '--max-line-length=115'
+" let g:ale_python_autopep8_options = '--max-line-length 115'
+
+" This might be useful when working with non C file types?
+" set omnifunc=ale#completion#OmniFunc 
 
 nmap <leader>f :ALEFix<cr>
-
-nmap <leader>j :ALEGoToDefinition<cr>
-
-nmap <leader>k :ALEFindReferences<cr>
-
 nmap <leader>e :lopen<cr>
 
 " Style for error markers
@@ -263,21 +319,6 @@ hi link ALEErrorSign cComment
 hi link ALEWarningSign cComment
 hi link ALEInfoSign cComment
 
-" Maybe set this for python and other ale enabled languages?
-" set omnifunc=ale#completion#OmniFunc
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Autocomplete 
-"
-
-" call minpac#add('Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'})
-" let g:deoplete#enable_at_startup = 1
-" set completeopt-=preview
-
-" I'm using vim's builtin completion engine. I like it to be case sensitive
-" but other things like search in file stay case insensitive. 
-au InsertEnter * set noignorecase
-au InsertLeave * set ignorecase
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toggle Comments.
@@ -295,6 +336,11 @@ call minpac#add('tpope/vim-commentary')
 "    autocmd!
 "    autocmd FileType apache setlocal commentstring=#\ %s
 " augroup END
+
+augroup c_ftft
+   autocmd!
+   autocmd FileType c :setlocal commentstring=//\ %s
+augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Better support for markdown files
@@ -336,6 +382,9 @@ nnoremap <silent> <c-a>l :TmuxNavigateRight<cr>
 
 " For C
 call minpac#add('justinmk/vim-syntax-extra')
+
+" Javascript
+call minpac#add('jelera/vim-javascript-syntax')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors
