@@ -4,7 +4,7 @@
     "modes": [
         3
     ],
-    "usageCount": 0,
+    "usageCount": 56,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
@@ -24,7 +24,7 @@
         "hotKey": "w"
     },
     "filter": {
-        "regex": null,
+        "regex": "(?!Alacritty)",
         "isRecursive": false
     },
     "sendMode": "kb"
