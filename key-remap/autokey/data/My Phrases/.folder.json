@@ -2,7 +2,7 @@
     "type": "folder",
     "title": "My Phrases",
     "modes": [],
-    "usageCount": 987,
+    "usageCount": 990,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [],
@@ -19,7 +19,7 @@
         "hotKey": "<f7>"
     },
     "filter": {
-        "regex": "^((?!Alacritty|VirtualBox).)*$",
+        "regex": "^((?!VirtualBox).)*$",
         "isRecursive": true
     }
 }

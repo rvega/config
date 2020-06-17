@@ -7,7 +7,7 @@
         "menuTakesFocus": false,
         "showTrayIcon": false,
         "sortByUsageCount": true,
-        "promptToSave": false,
+        "promptToSave": true,
         "enableQT4Workaround": false,
         "interfaceType": "XRecord",
         "undoUsingBackspace": true,
@@ -25,12 +25,14 @@
         "notificationIcon": "autokey-status",
         "workAroundApps": ".*VirtualBox.*|krdc.Krdc",
         "triggerItemByInitial": false,
-        "disabledModifiers": [],
+        "disabledModifiers": [
+            "<capslock>"
+        ],
         "scriptGlobals": {}
     },
     "folders": [],
     "toggleServiceHotkey": {
-        "enabled": true,
+        "enabled": false,
         "modifiers": [
             "<shift>",
             "<super>"
@@ -38,7 +40,7 @@
         "hotKey": "k"
     },
     "configHotkey": {
-        "enabled": true,
+        "enabled": false,
         "modifiers": [
             "<super>"
         ],
