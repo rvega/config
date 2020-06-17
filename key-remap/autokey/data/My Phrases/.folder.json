@@ -1,10 +1,8 @@
 {
     "type": "folder",
     "title": "My Phrases",
-    "modes": [
-        3
-    ],
-    "usageCount": 0,
+    "modes": [],
+    "usageCount": 987,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [],
@@ -21,7 +19,7 @@
         "hotKey": "<f7>"
     },
     "filter": {
-        "regex": null,
-        "isRecursive": false
+        "regex": "^((?!Alacritty|VirtualBox).)*$",
+        "isRecursive": true
     }
 }

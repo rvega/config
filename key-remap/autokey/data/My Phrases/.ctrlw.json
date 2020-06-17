@@ -4,7 +4,7 @@
     "modes": [
         3
     ],
-    "usageCount": 56,
+    "usageCount": 57,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
@@ -24,7 +24,7 @@
         "hotKey": "w"
     },
     "filter": {
-        "regex": "(?!Alacritty)",
+        "regex": "^((?!Alacritty|VirtualBox).)*$",
         "isRecursive": false
     },
     "sendMode": "kb"

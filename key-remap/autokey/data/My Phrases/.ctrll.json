@@ -1,11 +1,13 @@
 {
-    "type": "script",
-    "description": "Display window info",
-    "store": {},
-    "modes": [],
-    "usageCount": 28,
+    "type": "phrase",
+    "description": "ctrl+l",
+    "modes": [
+        3
+    ],
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
+    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [],
@@ -17,12 +19,13 @@
     },
     "hotkey": {
         "modifiers": [
-            "<super>"
+            "<ctrl>"
         ],
-        "hotKey": "<f2>"
+        "hotKey": "l"
     },
     "filter": {
         "regex": null,
         "isRecursive": false
-    }
+    },
+    "sendMode": "kb"
 }

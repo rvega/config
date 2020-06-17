@@ -3,3 +3,4 @@ link:
 	ln -s -f /home/Rafa/config/alacritty/alacritty.desktop ~/.local/share/applications/alacritty.desktop
 	ln -s -f /home/Rafa/config/alacritty/open_with_terminal_alacritty.desktop ~/.local/share/applications/open_with_terminal_alacritty.desktop
 	ln -s -f /home/Rafa/config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+	sudo ln -sf  /home/Rafa/config/alacritty/Alacritty.svg /usr/share/pixmaps/Alacritty.sv
