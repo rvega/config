@@ -1,0 +1,234 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'b
+	/home/rvg/bin/
+	..
+1586964809
+'h
+	/home/rvg/
+	..
+1586964809
+
+# TUI:
+al
+q1
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c
+	patches
+2
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c/patches
+	..
+0
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c
+	patches
+2
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c/patches
+	abstractions
+1
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c/patches/abstractions
+	fm.pd
+1
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c/patches
+	sine.pd
+5
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c
+	patches
+2
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro
+	mostro-c
+8
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c
+	vendors
+5
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c/vendors
+	..
+0
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c
+	src
+4
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c/src
+	definitions.h
+5
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c/patches
+	abstractions
+1
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c/patches/abstractions
+	samples2millis.pd
+2
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c/patches
+	abstractions
+1
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c/patches/abstractions
+	..
+0
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c/patches
+	abstractions
+1
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c/patches/abstractions
+	..
+0
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c/patches
+	abstractions
+1
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c/patches/abstractions
+	..
+0
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c/patches
+	abstractions
+1
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c/patches/abstractions
+	fm.pd
+1
+d/home/rvg/mostro/repos/mostro/mostro-c
+	scripts
+3
+d/home/rvg/mostro/repos/mostro/mostro-c/scripts
+	run_in_beaglebone.sh
+7
+d/home/rvg/mostro/repos/mostro/mostro-c
+	scripts
+3
+d/home/rvg/mostro/repos/mostro/mostro-c/scripts
+	run_in_beaglebone.sh
+7
+d/home/rvg
+	Projects
+13
+d/home/rvg/Projects
+	Techtivo
+28
+d/home/rvg/Projects/Techtivo
+	wiki
+1
+d/home/rvg/Projects/Techtivo/wiki
+	..
+0
+d/home/rvg/Projects/Techtivo
+	wiki
+1
+d/home/rvg/Projects/Techtivo/wiki
+	ExpectID_Sandbox_Guide.pdf
+2
+d/home/rvg/Projects/Techtivo/SandboxAnalytics
+	_template_top.php
+2
+d/home/Rafa/Projects/Active/Techtivo/SandboxAnalytics
+	_template_top.php
+2
+d/home/rvg/SoundVoid/repo/tests
+	support
+2
+d/home/rvg/SoundVoid/repo/tests/support
+	tuning_slendro_both.tun
+4
+d/home/rvg/mostro/repos/mostro/mostro-c
+	vendors
+6
+d/home/rvg/mostro/repos/mostro/mostro-c/vendors
+	the-sound-void
+5
+d/home/rvg/mostro/repos/mostro/mostro-c/vendors/the-sound-void
+	include
+5
+d/home/rvg/mostro/repos/mostro/mostro-c/vendors/the-sound-void/include
+	soundvoid
+1
+d/home/rvg/mostro/repos/mostro/mostro-c/vendors/the-sound-void/include/soundvoid
+	print.h
+6
+d/home/rvg/mostro/repos/mostro/mostro-c/vendors/the-sound-void/include
+	soundvoid
+1
+d/home/rvg/mostro/repos/mostro/mostro-c/vendors/the-sound-void
+	src
+6
+d/home/rvg/mostro/repos/mostro/mostro-c/vendors/the-sound-void/src
+	port.linux.c
+5
+d
+
+# Right window history (oldest to newest):
+D/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c
+	..
+0
+D/home/rvg
+	Downloads
+6
+D/home/rvg/Downloads
+	FORMATO SOLICITUD DE ENVIO.xlsx
+14
+D
+
+# Command line history (oldest to newest):
+:chmod +x %
+:!chmod +x run_in_beaglebone.sh
+:cd
+:q
+
+# Search history (oldest to newest):
+/down
+/Sandb
+/tec
+/cen
+/ven
+/so
+/in
+
+# Prompt history (oldest to newest):
+psines.pd
+pFMx1.pd
+psine.pd
+pFMx18.pd
+pmain.pd
+pdefinitions.h
+pinstall_to_beaglebone.sh
+prun_in_beaglebone.sh
+pindex.php
+pflow_1_step_1B.html
+pw
+pflow_1_step_1.php
+p_google_tag_top.php
+p_google_tag_bottom.php
+p_template_top.php
+p_template_bottom.php
+pflow_1_step_1A.php
+pflow_1_step_1B.php
+pflow_1_step_2.php
+pflow_1_step_3.php
+
+# Registers:
+""/home/Rafa/Projects/Active/Techtivo/SandboxAnalytics/flow_1_step_2.php
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/home/rvg/.local/share/vifm/Trash/000_FMx18.pd
+	/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/mostro-c/patches/FMx18.pd
+t/home/rvg/.local/share/vifm/Trash/000_tmp.sh
+	/home/rvg/mostro/repos/mostro/mostro-c/scripts/tmp.sh
+t/home/rvg/.local/share/vifm/Trash/000_install_to_beaglebone.sh
+	/home/rvg/mostro/repos/mostro/mostro-c/scripts/install_to_beaglebone.sh
+t/home/rvg/.local/share/vifm/Trash/000_flow_1_step_1A.php
+	/home/Rafa/Projects/Active/Techtivo/SandboxAnalytics/flow_1_step_1A.php
+t/home/rvg/.local/share/vifm/Trash/000_flow_1_step_1B.php
+	/home/Rafa/Projects/Active/Techtivo/SandboxAnalytics/flow_1_step_1B.php
+t/home/rvg/.local/share/vifm/Trash/000_flow_1_step_2.php
+	/home/Rafa/Projects/Active/Techtivo/SandboxAnalytics/flow_1_step_2.php
+
+# State:
+f
+i1
+[.1
+[F
+F
+I1
+].1
+]F
+s1

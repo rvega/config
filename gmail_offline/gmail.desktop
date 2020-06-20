@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=Gmail
-Exec=/usr/bin/google-chrome-stable https://mail.google.com/mail/u/0
+Exec=/usr/bin/vivaldi-stable https://mail.google.com/mail/u/0
 Terminal=false
 Icon=/home/Rafa/config/gmail_offline/gmail.png
 # Icon=gmail

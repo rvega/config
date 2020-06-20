@@ -25,6 +25,10 @@ fi
 bindkey -v
 bindkey "fd" vi-cmd-mode
 
+# Forward delete in normal and insert mode
+bindkey -a '^[[3~' delete-char
+bindkey '^[[3~' delete-char
+
 # Shift tab
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
