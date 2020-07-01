@@ -1,11 +1,13 @@
 {
-    "type": "phrase",
+    "type": "script",
     "description": "ctrl+l",
-    "modes": [],
-    "usageCount": 99,
+    "store": {},
+    "modes": [
+        3
+    ],
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
-    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [],
@@ -24,6 +26,5 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    },
-    "sendMode": "kb"
+    }
 }
