@@ -51,6 +51,7 @@ function! InstallPlugins()
   " https://github.com/sheerun/vim-polyglot
   call minpac#add('justinmk/vim-syntax-extra') " For C
   call minpac#add('jelera/vim-javascript-syntax') " Javascript
+  call minpac#add('amadeus/vim-xml') " XML
 
   call minpac#add('chriskempson/base16-vim')
 
@@ -357,6 +358,7 @@ let g:ale_linters = {
       \ 'cpp': ['clangd'],
       \'json': ['prettier'],
       \ }
+" \'php': ['phpcs']
 " \'python': ['pycodestyle'],
 " \'javascript': ['eslint']
 
@@ -365,7 +367,9 @@ let g:ale_fixers = {
       \'cpp': ['clang-format'],
       \'json': ['prettier'],
       \'html': ['prettier'],
-      \'python': ['yapf']
+      \'python': ['yapf'],
+      \'php': ['php_cs_fixer'],
+      \'xml': ['xmllint']
       \}
 " \'javascript': ['eslint']
 
@@ -391,6 +395,10 @@ hi link ALEInfoSign cComment
 " Jump around with ALE
 nmap <leader>j :ALEGoToDefinition<cr>
 nmap <leader>k :ALEFindReferences<cr>
+
+let g:ale_php_phpcs_standard='PSR12'
+let g:ale_php_cs_fixer_options='--rules=@PSR12'
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toggle Comments.
