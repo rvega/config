@@ -2,10 +2,63 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Manager Minpac
 " 
-packadd minpac
-call minpac#init()
-call minpac#add('k-takata/minpac', {'type': 'opt'})
-" To install/update plugins: call minpac#update() 
+
+" To install/update plugins :call InstallPlugins() 
+function! InstallPlugins()
+  packadd minpac
+  call minpac#init()
+  call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+  " Allows for user defined text objects
+  " See here if more text objects are needed
+  " https://github.com/kana/vim-textobj-user/wiki
+  call minpac#add('kana/vim-textobj-user') 
+
+  " gb for text object last pasted text.
+  " Nice with comments or indents, e.g. indent pasted text "=gb"
+  call minpac#add('saaguero/vim-textobj-pastedtext') 
+
+  " f for functions in C, Java and Vimscript. May be extended for more languages.
+  call minpac#add('kana/vim-textobj-function')
+  call minpac#add('thinca/vim-textobj-function-javascript') " Adds JS support
+  call minpac#add('bps/vim-textobj-python')                 " Adds python support
+  call minpac#add('kentaro/vim-textobj-function-php')       " Adds php
+
+  " Better paragraphs. p for paragraphs, { and } for motions.
+  call minpac#add('pianohacker/vim-textobj-indented-paragraph')
+
+  call minpac#add('mbbill/undotree')
+
+  call minpac#add('junegunn/fzf', {'do': 'install --bin'})
+  call minpac#add('junegunn/fzf.vim')
+
+  call minpac#add('derekwyatt/vim-fswitch')
+
+  call minpac#add('lervag/wiki.vim')
+
+  call minpac#add('SirVer/ultisnips')
+  call minpac#add('honza/vim-snippets')
+
+  call minpac#add('dense-analysis/ale')
+
+  call minpac#add('tpope/vim-commentary')
+
+  call minpac#add('plasticboy/vim-markdown')
+  call minpac#add('lambdalisue/suda.vim')
+  call minpac#add('christoomey/vim-tmux-navigator')
+
+  " Better syntax highlighting. Look for other languages here
+  " https://github.com/sheerun/vim-polyglot
+  call minpac#add('justinmk/vim-syntax-extra') " For C
+  call minpac#add('jelera/vim-javascript-syntax') " Javascript
+
+  call minpac#add('chriskempson/base16-vim')
+
+  call minpac#add('vim-vdebug/vdebug', {'type': 'opt'}) 
+
+  call minpac#update()
+  call minpac#clean()
+endfunction
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -17,7 +70,6 @@ filetype plugin on
 filetype indent on
 set relativenumber
 set number
-set textwidth=70
 set ignorecase 
 set smartcase
 set shiftwidth=2
@@ -26,7 +78,7 @@ set expandtab
 set clipboard^=unnamed,unnamedplus
 set linebreak
 set breakindent
-set showbreak=>
+set showbreak=>>
 set foldmethod=indent
 set foldlevelstart=99
 set textwidth=0 wrapmargin=0
@@ -34,6 +86,7 @@ set hidden
 set scrolloff=10
 set wildmenu
 set wildmode=full
+set laststatus=0
 
 " For motions, underscore separates words.
 " For searches with * underscore does not separate words.
@@ -45,7 +98,12 @@ set wildmode=full
 
 augroup c_ft
   autocmd!
-  autocmd BufEnter *.h :setlocal filetype=c
+  " autocmd BufEnter *.h :setlocal filetype=c
+augroup END
+
+augroup cpp_ft
+  autocmd!
+  autocmd FileType cpp :setlocal foldmethod=syntax
 augroup END
 
 
@@ -53,8 +111,12 @@ augroup END
 " Mappings
 " 
 
-" Training wheels: Don't use backspace repeatedly, use <c-w> or <c-h>
-" inoremap <backspace> <nop>
+" " Training wheels: Don't use backspace repeatedly, use <c-w> or <c-h>
+" " inoremap <backspace> <nop>
+" nnoremap jj <nop>
+" nnoremap kk <nop>
+" nnoremap hh <nop>
+" nnoremap ll <nop>
 
 " Use spacebar as leader
 nnoremap <space> <nop>
@@ -96,10 +158,11 @@ nnoremap <leader>l :Buffers<cr>
 nnoremap <leader>d :bd<cr>
 
 " Folds
-nnoremap z0 :set foldlevel=99<cr>
-nnoremap z1 :set foldlevel=0<cr>
-nnoremap z2 :set foldlevel=1<cr>
-nnoremap z3 :set foldlevel=2<cr>
+" Disabling this. Use zR, zr, zM, zm instead. (z reduce and z more)
+" nnoremap z0 :set foldlevel=99<cr>
+" nnoremap z1 :set foldlevel=0<cr>
+" nnoremap z2 :set foldlevel=1<cr>
+" nnoremap z3 :set foldlevel=2<cr>
 
 " Jump to sections (functions) with [], ][, [[ and ]]. See :h []
 nnoremap [[ ?{<CR>w99[{(
@@ -118,6 +181,9 @@ vnoremap g<leader>x g<c-x>
 " into
 " foo = ['a', 'b', 'c', 'd']
 nnoremap <leader>s F'i<return><esc>A<return><esc>kV:s/ /', '/g<return>I[<esc>A]<esc>kJ:noh<return>
+
+" Surround a word in C++ comments. Useful for parameter names in functions.
+nnoremap gciw <right>bi/* <esc>ea */<esc>
 
 
 
@@ -154,36 +220,48 @@ au InsertLeave * set ignorecase
 
 set completeopt=menu,longest
 
-" nmap <leader>j :ALEGoToDefinition<cr>
-" nmap <leader>k :ALEFindReferences<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom text objects
 " 
-" Allows for user defined text objects
-" See here if more text objects are needed
-" https://github.com/kana/vim-textobj-user/wiki
-call minpac#add('kana/vim-textobj-user') 
 
-" gb for text object last pasted text.
-" Nice with comments or indents, e.g. indent pasted text "=gb"
-call minpac#add('saaguero/vim-textobj-pastedtext') 
+" call minpac#add('libclang-vim/libclang-vim')
+" call minpac#add('libclang-vim/vim-textobj-function-clang')        " C++ (not
+" working, could not figure out how to add mappings.
 
-" f for functions in C, Java and Vimscript. May be extended for more languages.
-call minpac#add('kana/vim-textobj-function')
-call minpac#add('thinca/vim-textobj-function-javascript') " Adds JS support
-call minpac#add('bps/vim-textobj-python')                 " Adds python support
-call minpac#add('kentaro/vim-textobj-function-php')       " Adds php
 
+" I changed this in pack/minpac/start/vim-textobj-indented-paragraph/plugin/indented-paragraph.vim 
+" to get the normal paragraph mappings instead of the unfamiliar ones defined in the plugin.
+"
+" call textobj#user#plugin('indentedparagraph', {
+" \   '-': {
+" \     'select-a-function': 'indented_paragraph#SelectA',
+" \     'select-a': 'ap',
+" \     'select-i-function': 'indented_paragraph#SelectI',
+" \     'select-i': 'ip',
+" \     'move-n-function': 'indented_paragraph#MoveN',
+" \     'move-n': '}',
+" \     'move-p-function': 'indented_paragraph#MoveP',
+" \     'move-p': '{',
+" \   },
+" \ })
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Undo history
 "
-call minpac#add('simnalamburt/vim-mundo')
+
 set undofile
 autocmd BufWritePre /tmp/* setlocal noundofile
-nnoremap <leader>z :MundoToggle<cr>
-let g:mundo_prefer_python3 = 1
+nnoremap <leader>z :UndotreeToggle<cr>
+
+"" Another option is vim-undo (commented out below). Better search in history of file but not working
+"" last time I checked.
+
+" call minpac#add('simnalamburt/vim-mundo')
+" autocmd BufWritePre /tmp/* setlocal noundofile
+" nnoremap <leader>z :MundoToggle<cr>
+" let g:mundo_prefer_python3 = 1
+" let g:mundo_auto_preview_delay = 1000
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -194,21 +272,18 @@ let g:mundo_prefer_python3 = 1
 " For now, only <leader>t for opening files.
 " https://github.com/junegunn/fzf.vim
 
-call minpac#add('junegunn/fzf', {'do': 'install --all'})
-call minpac#add('junegunn/fzf.vim')
 nmap <leader>t :Files<cr>
 " nmap <leader><tab> <plug>(fzf-maps-n)
 " xmap <leader><tab> <plug>(fzf-maps-x)
 " omap <leader><tab> <plug>(fzf-maps-o)<Paste>
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
-let g:fzf_preview_window = 'right:50%'
+let g:fzf_preview_window = []
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Jump between c and h (companion) files.
 " 
 
-call minpac#add('derekwyatt/vim-fswitch')
 nnoremap <leader>h :call FSwitch('%', '')<cr>
 "autocmd BufEnter *.c let b:fswitchlocs = 'reg:/src/include/,reg:|src|include/**|,ifrel:|/src/|../include|'
 
@@ -234,7 +309,6 @@ endfunction
 "" Wiki.vim keeps to-do lists, notes, etc.
 "" <leader>ww
 
-call minpac#add('lervag/wiki.vim')
 let g:wiki_root = '/home/Rafa/wiki'
 let g:wiki_link_target_type = 'md'
 
@@ -249,7 +323,7 @@ endfunction
 augroup markdfown_ft
   autocmd!
   autocmd BufEnter *.md :call WordProcessorMode()
-  autocmd BufEnter *.md :call timer_start(100, 'FoldLevel99', {'repeat':1}) 
+  " autocmd BufEnter *.md :call timer_start(100, 'FoldLevel99', {'repeat':1}) 
 augroup END
 
 augroup wiki_ft
@@ -257,7 +331,7 @@ augroup wiki_ft
   autocmd BufEnter *.wiki :setlocal filetype=markdown
   autocmd BufEnter *.wiki :setlocal conceallevel=1
   autocmd BufEnter *.wiki :call WordProcessorMode()
-  autocmd BufEnter *.wiki :call timer_start(100, 'FoldLevel99', {'repeat':1}) 
+  " autocmd BufEnter *.wiki :call timer_start(100, 'FoldLevel99', {'repeat':1}) 
   autocmd BufEnter *.wiki inoremap <buffer> [<space> [ ]<space>
 augroup END
 
@@ -268,11 +342,6 @@ function! WikiFileOpen(...) abort dict
   return 1
 endfunction
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Snippets
-"
-call minpac#add('SirVer/ultisnips')
-call minpac#add('honza/vim-snippets')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ALE Plugin provides integration with outside tools such as language servers,
@@ -281,11 +350,11 @@ call minpac#add('honza/vim-snippets')
 " :lopen
 " <leader>f
 "
-call minpac#add('dense-analysis/ale')
 
 let g:ale_linters_explicit = 1
 let g:ale_linters = {
       \ 'c': ['clangd'],
+      \ 'cpp': ['clangd'],
       \'json': ['prettier'],
       \ }
 " \'python': ['pycodestyle'],
@@ -295,9 +364,9 @@ let g:ale_fixers = {
       \'c': ['clang-format'],
       \'cpp': ['clang-format'],
       \'json': ['prettier'],
-      \'html': ['prettier']
+      \'html': ['prettier'],
+      \'python': ['yapf']
       \}
-" \'python': ['autopep8'],
 " \'javascript': ['eslint']
 
 " let g:ale_javascript_eslint_use_global = 1
@@ -319,6 +388,9 @@ hi link ALEErrorSign cComment
 hi link ALEWarningSign cComment
 hi link ALEInfoSign cComment
 
+" Jump around with ALE
+nmap <leader>j :ALEGoToDefinition<cr>
+nmap <leader>k :ALEFindReferences<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toggle Comments.
@@ -326,7 +398,6 @@ hi link ALEInfoSign cComment
 " In normal mode use "gc" with movemments or "gcc" for current line.
 " e.g: "gcp" toggles comments for a paragraph
 " In visual mode, select and then do "gc"
-call minpac#add('tpope/vim-commentary')
 
 " Comment current line or selection
 " nmap <leader>c gcc
@@ -340,17 +411,12 @@ call minpac#add('tpope/vim-commentary')
 augroup c_ftft
    autocmd!
    autocmd FileType c :setlocal commentstring=//\ %s
+   autocmd FileType cpp :setlocal commentstring=//\ %s
 augroup END
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Better support for markdown files
-" 
-call minpac#add('plasticboy/vim-markdown')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ask for sudo password
 " 
-call minpac#add('lambdalisue/suda.vim')
 "cnoremap ee e suda://%
 cnoremap ww w suda://%
 
@@ -358,12 +424,12 @@ cnoremap ww w suda://%
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Integration with tmux
 " 
-call minpac#add('christoomey/vim-tmux-navigator')
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <c-a>h :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-a>j :TmuxNavigateDown<cr>
 nnoremap <silent> <c-a>k :TmuxNavigateUp<cr>
 nnoremap <silent> <c-a>l :TmuxNavigateRight<cr>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use TMUX clipboard instead of X11 clipboard. 
@@ -375,21 +441,10 @@ nnoremap <silent> <c-a>l :TmuxNavigateRight<cr>
 
 " call minpac#add('roxma/vim-tmux-clipboard')
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Better syntax highlighting. Look for other languages here
-" https://github.com/sheerun/vim-polyglot
-" 
-
-" For C
-call minpac#add('justinmk/vim-syntax-extra')
-
-" Javascript
-call minpac#add('jelera/vim-javascript-syntax')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors
 " 
-call minpac#add('chriskempson/base16-vim')
 syntax enable
 set background=dark
 let base16colorspace=256
@@ -419,4 +474,17 @@ highlight LineNr ctermfg=240 ctermbg=0
 " map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 " \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 " \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PHP Debugger
+" :packadd vdebug to enable the plugin and then <f5> to listen for
+" connections. You'll need to change mappings below for projects that use
+" remote debugger (docker containers for example).
+
+let g:vdebug_options = {
+\   'path_maps': {
+\        "/var/1rpm/source/source": "/home/Rafa/Projects/Active/OneRPM/repos/onerpm-legacy/source",
+\        "/var/www/": "/home/Rafa/Projects/Active/OneRPM/repos/onerpm-api",
+\   },
+\}
 
