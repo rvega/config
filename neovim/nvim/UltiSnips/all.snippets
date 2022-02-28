@@ -1,0 +1,31 @@
+priority -60
+
+global !p
+from vimsnippets import foldmarker, make_box, get_comment_format
+endglobal
+
+# This will detect the adequate starting and ending comment thingy. Leaving out for now...
+# snippet dox "Doxygen comment block (rvg)"
+# `!p snip.rv = get_comment_format()[0]`*
+#  * @brief ${1:Lorem ipsum dolor sit}
+#  * 
+#  * @param ${2:Function parameter}
+#  * @return ${3:Function return}
+#  `!p snip.rv = get_comment_format()[2]`
+# endsnippet
+
+snippet dox "Doxygen comment block (rvg)"
+/**
+ * ${1:A long description}
+ *
+ * @brief ${2:Shorter description}
+ * @param ${3:Describe a function parameter}
+ * @return ${4:Describe what the function returns}
+ */ 
+endsnippet
+
+snippet modeline "Vim modeline (rvg)"
+# vim: set nowrap:
+endsnippet
+
+# vim:ft=snippets:

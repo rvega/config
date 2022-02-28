@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/Rafa/config/neovim/nvim/UltiSnips'
+let g:netrw_dirhist_7='/home/Rafa/Projects/Active/OneRPM/repos/onerpm-angular-projects/projects/onerpm-cms/src/app/modules/tracks-module/components/track-uploader-bkp'
+let g:netrw_dirhist_6='/home/Rafa/Projects/Active/OneRPM/repos/onerpm-angular-projects/projects/onerpm-cms/src/app/modules/tracks-module/components'
+let g:netrw_dirhist_5='/home/Rafa/Projects/Active/OneRPM/repos/onerpm-angular-projects/projects/onerpm-cms/src/app/modules/tracks-module'
+let g:netrw_dirhist_4='/home/Rafa/Projects/Active/OneRPM/misc/SalesReports'
+let g:netrw_dirhist_3='/home/rvg/Arduino/Blink'
+let g:netrw_dirhist_2='/home/rvg/Arduino'
+let g:netrw_dirhist_1='/home/Rafa/Projects/Active/OneRPM/repos/onerpm-angular-projects/projects/onerpm-cms'
+let g:netrw_dirhist_0='/home/Rafa/Projects/Active/Biota.ch/repo'
+let g:netrw_dirhist_9='/home/rvg/.vifm'

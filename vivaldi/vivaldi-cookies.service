@@ -1,0 +1,6 @@
+[Unit]
+Description=Delete vivaldi cookies daily.
+
+[Service]
+ExecStart=/home/Rafa/config/vivaldi/delete-cookies.sh
+Type=simple

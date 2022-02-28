@@ -52,10 +52,16 @@ function! InstallPlugins()
   call minpac#add('justinmk/vim-syntax-extra') " For C
   call minpac#add('jelera/vim-javascript-syntax') " Javascript
   call minpac#add('amadeus/vim-xml') " XML
+  call minpac#add('StanAngeloff/php.vim') "php
 
   call minpac#add('chriskempson/base16-vim')
 
   call minpac#add('vim-vdebug/vdebug', {'type': 'opt'}) 
+
+  call minpac#add('moll/vim-bbye')
+
+  " Better spelling corrector
+  call minpac#add('kamykn/spelunker.vim')
 
   call minpac#update()
   call minpac#clean()
@@ -86,7 +92,7 @@ set textwidth=0 wrapmargin=0
 set hidden
 set scrolloff=10
 set wildmenu
-set wildmode=full
+set wildmode=list:longest
 set laststatus=0
 
 " For motions, underscore separates words.
@@ -105,6 +111,13 @@ augroup END
 augroup cpp_ft
   autocmd!
   autocmd FileType cpp :setlocal foldmethod=syntax
+augroup END
+
+augroup php_ft
+  autocmd!
+  autocmd FileType php :setlocal softtabstop=4
+  autocmd FileType php :setlocal shiftwidth=4
+  autocmd FileType php :setlocal tabstop=4
 augroup END
 
 
@@ -156,7 +169,7 @@ inoremap [<space> [ ]<esc>hi
 nnoremap <leader>n :bn<cr>
 nnoremap <leader>N :bp<cr>
 nnoremap <leader>l :Buffers<cr>
-nnoremap <leader>d :bd<cr>
+nnoremap <leader>d :Bdelete<cr>
 
 " Folds
 " Disabling this. Use zR, zr, zM, zm instead. (z reduce and z more)
@@ -186,6 +199,15 @@ nnoremap <leader>s F'i<return><esc>A<return><esc>kV:s/ /', '/g<return>I[<esc>A]<
 " Surround a word in C++ comments. Useful for parameter names in functions.
 nnoremap gciw <right>bi/* <esc>ea */<esc>
 
+" Jump to next underscore in line and convert to CamelCase
+nnoremap <leader>- f_xgUl
+nnoremap <leader>_ f_xgUl
+
+" Replace ['something'] with ->something This is useful for php
+nnoremap <leader>> f[xxi-><esc>f]xX<esc>
+
+" Replace ->something with ['something'] This is useful for php
+nnoremap <leader>[ f-xxi['<esc>ea']<esc>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -221,6 +243,12 @@ au InsertLeave * set ignorecase
 
 set completeopt=menu,longest
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Snippets. Ultisnips
+" 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom text objects
@@ -270,10 +298,17 @@ nnoremap <leader>z :UndotreeToggle<cr>
 " 
 
 " TODO: Explore! There are a lot of interesting commands in this plugin. 
-" For now, only <leader>t for opening files.
 " https://github.com/junegunn/fzf.vim
+"
+" Use these commands!!!
+" <leader>t or :GFiles for opening files in repo.
+" <leader>T or :Files for opening ALL files, even gitignored files.
+" :Tags
+" :Rg
+" :Snippets
 
-nmap <leader>t :Files<cr>
+nmap <leader>t :GFiles<cr> 
+nmap <leader>T :Files<cr>
 " nmap <leader><tab> <plug>(fzf-maps-n)
 " xmap <leader><tab> <plug>(fzf-maps-x)
 " omap <leader><tab> <plug>(fzf-maps-o)<Paste>
@@ -281,12 +316,23 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 let g:fzf_preview_window = []
 
+" This is what is executed for :Files command
+let $FZF_DEFAULT_COMMAND = 'rg --files --follow --hidden --no-ignore --color=never 2> /dev/null'
+"let $FZF_DEFAULT_OPTS = '--keep-right'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Jump between c and h (companion) files.
 " 
 
 nnoremap <leader>h :call FSwitch('%', '')<cr>
+
 "autocmd BufEnter *.c let b:fswitchlocs = 'reg:/src/include/,reg:|src|include/**|,ifrel:|/src/|../include|'
+
+
+" ts and html files, useful for angular projects
+au! BufEnter *.ts let b:fswitchdst = 'html' | let b:fswitchlocs = './'
+au! BufEnter *.html let b:fswitchdst = 'ts' | let b:fswitchlocs = './'
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -321,27 +367,28 @@ function! FoldLevel99(timer)
   setlocal foldlevel=99
 endfunction
 
+function! MarkdownConfig()
+  call WordProcessorMode()
+  setlocal softtabstop=3
+  setlocal shiftwidth=3
+  setlocal conceallevel=1
+  inoremap <buffer> [<space> [ ]<space>
+  " autocmd BufEnter *.md :call timer_start(100, 'FoldLevel99', {'repeat':1}) 
+endfunction
+
 augroup markdfown_ft
   autocmd!
-  autocmd BufEnter *.md :call WordProcessorMode()
-  " autocmd BufEnter *.md :call timer_start(100, 'FoldLevel99', {'repeat':1}) 
-augroup END
-
-augroup wiki_ft
-  autocmd!
+  autocmd BufEnter *.md :call MarkdownConfig()
+  autocmd BufEnter *.wiki :call MarkdownConfig()
   autocmd BufEnter *.wiki :setlocal filetype=markdown
-  autocmd BufEnter *.wiki :setlocal conceallevel=1
-  autocmd BufEnter *.wiki :call WordProcessorMode()
-  " autocmd BufEnter *.wiki :call timer_start(100, 'FoldLevel99', {'repeat':1}) 
-  autocmd BufEnter *.wiki inoremap <buffer> [<space> [ ]<space>
 augroup END
 
 " Open file links with xdg-open
-let g:wiki_file_open = 'WikiFileOpen'
-function! WikiFileOpen(...) abort dict
-  silent execute '!xdg-open' fnameescape(self.path) '&'
-  return 1
-endfunction
+" let g:wiki_file_open = 'WikiFileOpen'
+" function! WikiFileOpen(...) abort dict
+"   silent execute '!xdg-open' fnameescape(self.path) '&'
+"   return 1
+" endfunction
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -357,8 +404,9 @@ let g:ale_linters = {
       \ 'c': ['clangd'],
       \ 'cpp': ['clangd'],
       \'json': ['prettier'],
+      \'php': ['intelephense']
       \ }
-" \'php': ['phpcs']
+      " \'php': ['phpcs'],
 " \'python': ['pycodestyle'],
 " \'javascript': ['eslint']
 
@@ -368,10 +416,11 @@ let g:ale_fixers = {
       \'json': ['prettier'],
       \'html': ['prettier'],
       \'python': ['yapf'],
-      \'php': ['php_cs_fixer'],
-      \'xml': ['xmllint']
+      \'xml': ['xmllint'],
+      \'php': ['php_cs_fixer']
       \}
-" \'javascript': ['eslint']
+"     \'php': ['phpcbf'],
+"     \'javascript': ['eslint']
 
 " let g:ale_javascript_eslint_use_global = 1
 " let g:ale_python_pycodestyle_options = '--max-line-length=115'
@@ -396,8 +445,11 @@ hi link ALEInfoSign cComment
 nmap <leader>j :ALEGoToDefinition<cr>
 nmap <leader>k :ALEFindReferences<cr>
 
-let g:ale_php_phpcs_standard='PSR12'
-let g:ale_php_cs_fixer_options='--rules=@PSR12'
+let g:ale_php_cs_fixer_options = '--config=/home/rvg/.php-cs-fixer.php'
+let g:ale_php_langserver_executable = '/home/rvg/.config/composer/vendor/bin/php-language-server.php'
+" let g:ale_php_cs_fixer_use_global = 1
+" let g:ale_php_phpcbf_standard='PSR12'
+" let g:ale_php_phpcs_standard='PSR12'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -422,6 +474,17 @@ augroup c_ftft
    autocmd FileType cpp :setlocal commentstring=//\ %s
 augroup END
 
+augroup php_ftft
+   autocmd!
+   autocmd FileType php :setlocal commentstring=//\ %s
+augroup END
+
+augroup js_ftft
+   autocmd!
+   autocmd FileType typescript :setlocal commentstring=//\ %s
+   autocmd FileType js :setlocal commentstring=//\ %s
+augroup END
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ask for sudo password
 " 
@@ -432,7 +495,7 @@ cnoremap ww w suda://%
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Integration with tmux
 " 
-let g:tmux_navigator_no_mappings = 1
+let g:tmux_navigator_no_mappings = 2
 nnoremap <silent> <c-a>h :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-a>j :TmuxNavigateDown<cr>
 nnoremap <silent> <c-a>k :TmuxNavigateUp<cr>
@@ -449,6 +512,21 @@ nnoremap <silent> <c-a>l :TmuxNavigateRight<cr>
 
 " call minpac#add('roxma/vim-tmux-clipboard')
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Spelling
+
+" See mappings in https://github.com/kamykn/spelunker.vim
+" Zl -> list correction
+" Zg -> add word to dictionary
+" ZN -> Jump to next error
+" ZP -> Jump to previous error
+
+" Enable by default only in php files.
+let g:spelunker_disable_auto_group= 1
+augroup spelunker
+  autocmd!
+  autocmd BufWinEnter,BufWritePost *.php call spelunker#check()
+augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors

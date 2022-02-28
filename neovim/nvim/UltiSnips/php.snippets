@@ -1,0 +1,42 @@
+priority -40
+
+snippet break "xdebug_break();"
+xdebug_break();
+endsnippet
+
+snippet fun "A class method (rvg)"
+/**
+ * ${1:A long description}
+ *
+ * @param int	$param1Name description 
+ * @param float	$param2Name description 
+ * @param \Some\Full\Class\Name $param3Name Long description dolor sit 
+ *                                          amet, consetetur sadipscing
+ *
+ * @throws \Exception
+ *
+ * @return returnType|null|$this
+ */ 
+protected function functionName() : void {
+
+}
+endsnippet
+
+snippet var "A class property (rvg)"
+/**
+ * @var ${1:type} $${2:name} ${3:description}
+ */ 
+private $1 $$2;
+endsnippet
+
+snippet get "A getter (rvg)"
+/**
+ * Return the value of $1
+ *
+ * @return $2
+ */ 
+public function get${1/\w+\s*/\u$0/}() : ${2:string} {
+    return $this->$1;
+}
+endsnippet
+

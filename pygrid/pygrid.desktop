@@ -1,9 +1,10 @@
-#!/usr/bin/env xdg-open
 [Desktop Entry]
 Categories=Utility;
 Comment=Resize Windows
 Exec=/home/Rafa/config/pygrid/launch.sh
+Icon=window_list
 Name=Pygrid
-StartupNotify=false
+#StartupNotify=false
+X-GNOME-Autostart-enabled=true
 Type=Application
 Version=1.0
