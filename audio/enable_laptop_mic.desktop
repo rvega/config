@@ -1,8 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Version=1.0
-Type=Application
-Terminal=true
-Exec=/home/Rafa/config/audio/enable_laptop_mic.sh
-Name=Enable Laptop Mic
-Icon=view-grid-symbolic
