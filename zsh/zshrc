@@ -1,7 +1,7 @@
 # Load zgen
 source "${HOME}/Config/zsh/zgen/zgen.zsh"
 
-# check if there's no init script
+# check if there's no init.zsh script
 if ! zgen saved; then
     # plugins
     zgen oh-my-zsh
@@ -10,9 +10,9 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/command-not-found
     zgen oh-my-zsh plugins/colored-man-pages
     zgen oh-my-zsh plugins/extract
-    zgen load zsh-users/zsh-syntax-highlighting
     zgen load mattmc3/zsh-safe-rm
-    # zgen load Aloxaf/fzf-tab # FZF
+    zgen load zsh-users/zsh-syntax-highlighting
+    zgen load ytakahashi/igit
 
     # theme
     zgen load ${HOME}/Config/zsh/rafa.zsh-theme
@@ -41,27 +41,29 @@ setopt correct
 # Don't keep duplicates in zsh history
 setopt HIST_IGNORE_ALL_DUPS
 
-# Use Fuzzy Finder to find files/directories with ctrl+t 
-# and command history with ctrl+r
-# https://github.com/junegunn/fzf
-export FZF_COMPLETION_TRIGGER='**'
+###################################################################
+
+# Use Fuzzy Finder to find files/directories with ctrl+t, command history with
+# ctrl+r and fuzzy cd command with alt+c https://github.com/junegunn/fzf 
+# This Maybe enable this: https://github.com/Aloxaf/fzf-tab
+export FZF_COMPLETION_TRIGGER="**"
 export FZF_DEFAULT_COMMAND='rg --files --follow --hidden --color=never 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
 
-
-###################################################################
 ###################################################################
 
 # PATH
-NPM_PACKAGES="${HOME}/.npm-packages/bin"
-FZF_BIN="${HOME}/.config/nvim/pack/minpac/start/fzf/bin" 
-OCENAUDIO_BIN="${HOME}/.config/nvim/pack/minpac/start/fzf/bin" 
-GEM_BIN="${HOME}/.gem/ruby/2.6.0/bin" 
+
 BUILDROOT_BIN="/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/linux-filesystem/buildroot/output/host/bin/"
 SNAP_BIN="/snap/bin" 
 LOCAL_BIN="${HOME}/.local/bin" 
-export PATH=$PATH:${NPM_PACKAGES}:${OCENAUDIO_BIN}:${FZF_BIN}:${GEM_BIN}:${SNAP_BIN}:${LOCAL_BIN}:${BUILDROOT_BIN}
+COMPOSER_BIN="${HOME}/.config/composer/vendor/bin"
+export PATH=$PATH:${SNAP_BIN}:${LOCAL_BIN}:${BUILDROOT_BIN}:${COMPOSER_BIN}
+
+# Training wheels for <alt>-c
+# alias cd="echo 'Use <alt>-c instead of cd!' && cd "
 
 # Alias for cmake in debug and ninja mode
 alias cmake_ninja="cmake -G Ninja -DCMAKE_BUILD_TYPE=debug"
@@ -78,11 +80,12 @@ alias pip='echo "use pip with --user flag."'
 # Copy to "clipboard" and not "selection" from xclip command
 alias xclip='xclip -selection clipboard'
 
+# Prevent sudo timeout when installing stuff with yay
+alias yay='yay --sudoloop'
+
 # Render a markdown file to html, you need to `pacman -S python-grip`
-alias md2html='grip --export'
-# function md2html(){
-  # grip --export $1
-# }
+alias md2html='grip -b' # Preview server
+alias md2html_export='grip --export' # Actually export a html file
 
 # Set colors for shell
 BASE16_SHELL="~/Config/gnome-terminal/colors/base16-shell/scripts/base16-atelier-forest.sh"
@@ -93,6 +96,9 @@ alias du="du -sk (*|.*) | sort -rn | awk '{\$1=\"\"; print \$0}' | xargs -ia du 
 
 ## dcfldd is frendlier than dd
 ## alias dd=dcfldd
+
+# ripgrep use smart case
+alias rg="rg -S"
 
 # mv and cp prompt before overwriting
 alias mv="mv -i"
@@ -117,7 +123,7 @@ alias vimdiff='=nvim -d'
 alias ll='ls -alh'
 alias l='ls'
 
-# Find 
+# Find hidden files and follow simlinks
 function fnd () {
   fd -H -L $1
 }
@@ -156,6 +162,12 @@ alias mountuser="sudo mount -o gid=storage,fmask=113,dmask=002"
 # Use pigz instead of gzip
 alias gzip=pigz
 
+# VI File Manager
+alias vifm='vifm .'
+
+# I keep typing gs by mistake.
+alias gs='echo "Type =gs if you want to use ghostscript"'
+
 # Do not line wrap when using less
 export LESS=-RS
 
@@ -165,8 +177,9 @@ export NUMCPUS=4
 # export MAKEFLAGS="-j$((NUMCPUS*2)) --load-average=$((NUMCPUS*2))"
 export MAKEFLAGS="-j$((NUMCPUS))"
 
-# VI File Manager
-alias vifm='vifm .'
+
+# When using pipenv, install dependencies in project dir
+export PIPENV_VENV_IN_PROJECT=1
 
 # Prevent ctrl+s to do that weird thing it does
 # http://raamdev.com/2007/recovering-from-ctrls-in-putty/
@@ -175,12 +188,36 @@ stty ixoff -ixon
 
 
 # Node version manager
-# For automatic version switching with .nvmrc files in project 
-# directories, do:
-#    npm install -g avn-nvm
-#    cd ~/.nvm
-#    ln -s /usr/share/nvm/nvm.sh
+# For automatic version switching with .nvmrc files in project directories.
+# https://github.com/nvm-sh/nvm/blob/master/README.md#installing-and-updating
+# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-# source /usr/share/nvm/init-nvm.sh
-# [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+source /usr/share/nvm/init-nvm.sh
+
+
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
+# Ruby version manager and rubygems 
+export PATH="$HOME/.rvm/bin:$HOME/.gem/ruby/3.0.0/bin:$PATH"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
 

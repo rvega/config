@@ -1,6 +1,6 @@
 [user]
-	name = Rafael Vega
-	email = contacto@rafaelvega.co
+  name = Rafael Vega
+  email = contacto@rafaelvega.co
 
 [credential]
   helper = cache --timeout=3600
@@ -32,13 +32,22 @@
 [core]
   editor = vim
 
+[alias]
+  d = difftool
+
+[init]
+  templatedir = ~/Config/git/gittemplate
+
 [diff]
   tool = vimdiff
-
 [difftool]
   prompt = false
 
-[alias]
-  d = difftool
-[init]
-	templatedir = ~/Config/git/gittemplate
+; [diff]
+;     tool = meld
+; [difftool]
+;     prompt = false
+; [difftool "meld"]
+;     cmd = meld "$LOCAL" "$REMOTE"
+; [pull]
+; 	rebase = false

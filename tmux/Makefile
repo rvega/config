@@ -1,4 +1,3 @@
 install:
-	yay -S ripgrep tmux python-pip
-	sudo pip install tmuxp
+	yay -S ripgrep tmux tmuxp
 	ln -sf ~/Config/tmux/tmux.conf ~/.tmux.conf

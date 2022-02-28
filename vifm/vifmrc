@@ -14,6 +14,7 @@ set vicmd="~/Rafa/config/neovim/open-with-neovim.sh"
 " set vicmd=elvis\ -G\ termcap
 " set vicmd=vile
 
+
 " Trash Directory
 " The default is to move files that are deleted with dd or :d to
 " the trash directory.  If you change this you will not be able to move
@@ -71,7 +72,7 @@ set fusehome=/tmp/vifm_FUSE
 " TIME_STAMP_FORMAT=%m/%d-%H:%M
 " See man date or man strftime for details.
 
-set timefmt=%m/%d\ %H:%M
+set timefmt=%d/%m/%y\ %H:%M
 
 " Show list of matches on tab complition in command-line mode
 
@@ -271,8 +272,20 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 
 " Sample mappings
 
-nmap s :shell<cr>
-nmap S :sort<cr>
+" nmap s :shell<cr>
+" nmap S :sort<cr>
+
+" Sort with directories and files together, not grouped.
+nmap sn :windo set sort=+name,+dir<cr>
+nmap sN :windo set sort=-name,+dir<cr>
+nmap sd :windo set sort=+mtime,+dir<cr>
+nmap sD :windo set sort=-mtime,+dir<cr>
+nmap sm :windo set sort=+mtime,+dir<cr>
+nmap sM :windo set sort=-mtime,+dir<cr>
+nmap ss :windo set sort=+size,+dir<cr>
+nmap sS :windo set sort=-size,+dir<cr>
+
+
 nmap w :view<cr>
 nmap o :edit<cr>
 nmap O :!xdg-open %f<cr>

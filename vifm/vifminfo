@@ -12,7 +12,7 @@
 
 # TUI:
 al
-q1
+q0
 v2
 ov
 m-1
@@ -152,6 +152,63 @@ d/home/rvg/mostro/repos/mostro/mostro-c/vendors/the-sound-void
 d/home/rvg/mostro/repos/mostro/mostro-c/vendors/the-sound-void/src
 	port.linux.c
 5
+d/home/rvg
+	Projects
+4
+d/home/rvg/Projects
+	Techtivo
+23
+d/home/rvg/Projects/Techtivo
+	wiki
+7
+d/home/rvg/Projects
+	Techtivo
+22
+d/home/rvg/Projects/Techtivo
+	wiki
+7
+d/home/rvg/mostro/repos/mostro/mostro-c/build
+	build.ninja
+5
+d/home/rvg
+	Screencast_07-06-20_14:49:32.mp4
+31
+d/home/rvg/Downloads
+	JNMR - Drum Rhythm Spaces_with corrections final.zip
+39
+d/home/rvg/Techtivo
+	wiki
+7
+d/home/rvg/Techtivo/wiki
+	eBayFunnelJuly1.png
+4
+d/home/rvg/SoundVoid
+	..
+0
+d/home/rvg
+	Rafa
+4
+d/home/rvg/Rafa
+	Fender_Bass Service Manual REV A 5-3-16.pdf
+26
+d/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/pd
+	..
+0
+d/home/rvg/mostro/repos/mostro/mostro-c
+	scripts
+4
+d/home/rvg/mostro/repos/mostro/mostro-c/scripts
+	compile_tinyalsa.sh
+2
+d/home/rvg/mostro/repos/mostro/mostro-c
+	scripts
+4
+d/home/rvg/mostro/repos/mostro
+	mostro-c
+8
+d/home/rvg/Projects/OneRPM/repo
+	..
+0
 d
 
 # Right window history (oldest to newest):
@@ -164,6 +221,15 @@ D/home/rvg
 D/home/rvg/Downloads
 	FORMATO SOLICITUD DE ENVIO.xlsx
 14
+D/home/rvg
+	Downloads
+6
+D/home
+	rvg
+2
+D/
+	proc
+10
 D
 
 # Command line history (oldest to newest):
@@ -180,6 +246,10 @@ D
 /ven
 /so
 /in
+/pro
+/jn
+/wik
+/rafa
 
 # Prompt history (oldest to newest):
 psines.pd
@@ -204,7 +274,7 @@ pflow_1_step_2.php
 pflow_1_step_3.php
 
 # Registers:
-""/home/Rafa/Projects/Active/Techtivo/SandboxAnalytics/flow_1_step_2.php
+""/home/rvg/Techtivo/wiki/eBayFunnelJuly1.png
 
 # Directory stack (oldest to newest):
 
@@ -231,4 +301,4 @@ F
 I1
 ].1
 ]F
-s1
+s0
