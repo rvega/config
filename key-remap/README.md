@@ -2,7 +2,7 @@
 
 I'm using 3 types of keyboard configs. 
 
-1. For the koolterton usb keyboard, there is a windoze config tool that allows for mappings.
+1. For the koolterton usb keyboard, there is a windows config tool that allows for mappings.
 
 2. For the laptop keyboard and the microsoft usb keyboard, I use the xmodmap util. See the .sh and .desktop files in this directory.
 
