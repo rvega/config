@@ -20,22 +20,21 @@ Use `pavuctl` to set your default sound card and choose the "pro-audio" profile 
 
 ## Setting Sample Rate and Buffer Size.
 
+You can check what the current hardware parameters are with: `cat /proc/asound/card0/pcm0p/sub0/hw_params` (the file path will change for your cards); and check the applications' parameters with: `pw-top`.
+
 ### Via config files:
 
-These parameters can/should be set in a few places:
+These parameters can/should be set in a few places. See the `set_latency.py` script. Notice I'm setting num-periods to 4, that's what works with my sound card.
 
 * The ones used by pipewire's DSP graph in `config/pipewire/pipewire.conf`.
 * The ones used by hardware devices in `config/wireplumber/main.lua.d/50-alsa-config.lua`.
 * The ones used by jack applications in `config/pipewire/jack.conf`.
 * [Per application](https://gitlab.freedesktop.org/pipewire/pipewire/-/wikis/Config-JACK#per-application-latency)
 
-See the `set_latency.py` script. Notice I'm setting num-periods to 4, that's what works with my sound card.
-
-You can check if the actual hardware parameters were changed with: `cat /proc/asound/card0/pcm0p/sub0/hw_params`. And the applications' parameters with: `pw-top`.
-
 ### At runtime:
 
-According to pipewire wiki, you can set the samplerate and buffer sizes with the following commands during runtime. See the `set_latency_runtime.py` script.
+According to pipewire wiki, you can set the samplerate and buffer sizes with the following commands during runtime (see the `set_latency_runtime.py` script), 
+but in my tests this only sets the parameters for some applications and not the hardware so I'm not using this approach. 
 ```
 # For the DSP Graph and all Jack apps:
 pw-metadata -n settings 0 clock.force-rate <sample_rate>
@@ -49,5 +48,3 @@ pw-cli s <id> Props '{ params = [ "api.alsa.period-num" <buffer_size> ] }'
 pw-cli s <id> Props '{ params = [ "api.alsa.period-size" 2 ] }'
 pw-cli s <id> Props '{ params = [ "audio.rate" <sample_rate> ] }'
 ```
-But this is only sets the parameters for some applications, in my experience so I'm not using this.
-
