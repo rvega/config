@@ -10,6 +10,39 @@ import subprocess
 
 
 ##
+# Print help message
+def help():
+    print(("Usage:\n"
+           "   set_latency.py [(int) buffer_size] [(int) sample_rate]\n"
+           "Or:\n"
+           "   set_latency.py defaults\n"))
+
+
+##
+# Check if command line parameters are correct
+def main(args):
+    if len(args) == 2 and args[1] == 'defaults':
+        print("Setting default sample rate and buffer size")
+        set_defaults()
+    elif len(args) == 3:
+        try:
+            buffer_size = int(args[1])
+            sample_rate = int(args[2])
+        except ValueError:
+            help()
+            exit()
+        print("Setting sample rate {0} and buffer size {1}".format(
+            sample_rate, buffer_size))
+        set_parameters(buffer_size, sample_rate)
+    else:
+        help()
+        exit()
+
+    run_command("systemctl --user restart pipewire-pulse pipewire wireplumber",
+                False)
+
+
+##
 # Replace values in all config files.
 def set_parameters(buffer_size, sample_rate):
     replace('./config/pipewire/pipewire.conf', 'default.clock.rate ',
@@ -90,36 +123,6 @@ def run_command(command, doPrint):
         print(output)
 
     return output
-
-
-##
-# Print help message
-def help():
-    print(("Usage:\n"
-           "   set_latency.py [buffer_size] [sample_rate]\n"
-           "Or:\n"
-           "   set_latency.py defaults\n"))
-
-
-##
-# Check if command line parameters are correct
-def main(args):
-    if len(args) == 2 and args[1] == 'defaults':
-        print("Setting default sample rate and buffer size")
-        set_defaults()
-    elif len(args) == 3:
-        buffer_size = int(args[1])
-        sample_rate = int(args[2])
-        print("Setting sample rate {0} and buffer size {1}".format(
-            sample_rate, buffer_size))
-        set_parameters(buffer_size, sample_rate)
-    else:
-        help()
-        exit()
-
-    run_command(
-        "systemctl --user restart pipewire-pulse.service pipewire.service wireplumber.service",
-        True)
 
 
 if __name__ == "__main__":
