@@ -2,7 +2,7 @@
     "version": "0.96.0-beta.10",
     "userCodeDir": null,
     "settings": {
-        "isFirstRun": true,
+        "isFirstRun": false,
         "serviceRunning": true,
         "menuTakesFocus": false,
         "showTrayIcon": false,
@@ -15,11 +15,11 @@
             715,
             640
         ],
-        "hPanePosition": 266,
+        "hPanePosition": 433,
         "columnWidths": [
-            150,
-            50,
-            100
+            234,
+            49,
+            142
         ],
         "showToolbar": true,
         "notificationIcon": "autokey-status-dark",
@@ -34,7 +34,7 @@
             "1",
             "0"
         ],
-        "pathLastOpen": "0:0"
+        "pathLastOpen": "0:3"
     },
     "folders": [],
     "toggleServiceHotkey": {
