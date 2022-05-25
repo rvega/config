@@ -1,7 +1,9 @@
 {
     "type": "phrase",
     "description": "gatos",
-    "modes": [],
+    "modes": [
+        3
+    ],
     "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
@@ -16,8 +18,12 @@
         "wordChars": "[\\w]"
     },
     "hotkey": {
-        "modifiers": [],
-        "hotKey": null
+        "modifiers": [
+            "<alt>",
+            "<ctrl>",
+            "<super>"
+        ],
+        "hotKey": "p"
     },
     "filter": {
         "regex": null,
