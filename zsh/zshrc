@@ -10,7 +10,6 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/command-not-found
     zgen oh-my-zsh plugins/colored-man-pages
     zgen oh-my-zsh plugins/extract
-    zgen load mattmc3/zsh-safe-rm
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load ytakahashi/igit
 
@@ -54,6 +53,10 @@ source /usr/share/fzf/key-bindings.zsh
 
 ###################################################################
 
+# export PHP_CS_FIXER_IGNORE_ENV=1
+
+###################################################################
+
 # PATH
 
 BUILDROOT_BIN="/home/Rafa/Projects/Active/OuterSpaceSounds/projects/mostro/repos/mostro/linux-filesystem/buildroot/output/host/bin/"
@@ -65,8 +68,14 @@ export PATH=$PATH:${SNAP_BIN}:${LOCAL_BIN}:${BUILDROOT_BIN}:${COMPOSER_BIN}
 # Training wheels for <alt>-c
 # alias cd="echo 'Use <alt>-c instead of cd!' && cd "
 
+alias lf1="=lf"
+alias lf="tmux-load ~/Config/tmux-lf.json"
+
 # Alias for cmake in debug and ninja mode
 alias cmake_ninja="cmake -G Ninja -DCMAKE_BUILD_TYPE=debug"
+
+# send to trash instead of rm (need to install trash-cli from aur)
+alias rm=trash
 
 # Force ninja to output colors
 export CLICOLOR_FORCE=1
@@ -150,7 +159,7 @@ alias qq="exit"
 # Tmux and tmuxp stuff
 export DISABLE_AUTO_TITLE='true'
 alias tmux="tmux -2 -u attach || tmux -2 -u new"
-alias tmux-save="tmuxp freeze 0"
+alias tmux-save="tmuxp freeze"
 alias tmux-load="tmuxp load"
 
 # Nethog
@@ -167,6 +176,9 @@ alias vifm='vifm .'
 
 # I keep typing gs by mistake.
 alias gs='echo "Type =gs if you want to use ghostscript"'
+
+# Fire up the OneRPM devel environment.
+alias onerpmdevel='cd ~/OneRPM/repos &&  print -n -- "\e]2; OneRPM \a" && tmux-load tmux.json'
 
 # Do not line wrap when using less
 export LESS=-RS
@@ -186,36 +198,31 @@ export PIPENV_VENV_IN_PROJECT=1
 stty ixany
 stty ixoff -ixon
 
-
 # Node version manager
-# For automatic version switching with .nvmrc files in project directories.
-# https://github.com/nvm-sh/nvm/blob/master/README.md#installing-and-updating
-# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
 source /usr/share/nvm/init-nvm.sh
 
+# For automatic version switching with .nvmrc files in project directories.
+# https://github.com/nvm-sh/nvm/blob/master/README.md#installing-and-updating
+# autoload -U add-zsh-hook
+# load-nvmrc() {
+#   local node_version="$(nvm version)"
+#   local nvmrc_path="$(nvm_find_nvmrc)"
 
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
+#   if [ -n "$nvmrc_path" ]; then
+#     local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
 
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+#     if [ "$nvmrc_node_version" = "N/A" ]; then
+#       nvm install
+#     elif [ "$nvmrc_node_version" != "$node_version" ]; then
+#       nvm use
+#     fi
+#   elif [ "$node_version" != "$(nvm version default)" ]; then
+#     echo "Reverting to nvm default version"
+#     nvm use default
+#   fi
+# }
+# add-zsh-hook chpwd load-nvmrc
+# load-nvmrc
 
 # Ruby version manager and rubygems 
 export PATH="$HOME/.rvm/bin:$HOME/.gem/ruby/3.0.0/bin:$PATH"
