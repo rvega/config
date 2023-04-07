@@ -3,7 +3,7 @@
 Version=1.0
 Type=Application
 Terminal=false
-Exec=alacritty -e /home/rvg/Config/neovim/open-with-neovim.sh %F
+Exec=alacritty -e /home/vega/Config/neovim/open-with-neovim.sh %F
 Name=Terminal Vim
-Icon=vim
+Icon=nvim-qt
 

@@ -1,6 +1,6 @@
 {
     "type": "script",
-    "description": "ctrl+j",
+    "description": "ctrlj",
     "store": {},
     "modes": [
         3

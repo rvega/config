@@ -19,3 +19,6 @@ xmodmap -e "keycode 66 = Control_L NoSymbol Control_L"
 xmodmap -e "keycode 107 = Control_L NoSymbol Control_L"
 xmodmap -e "add control = Control_L"
 
+# Key repetition delay.
+gsettings set org.gnome.desktop.peripherals.keyboard delay 251
+gsettings set org.gnome.desktop.peripherals.keyboard delay 250

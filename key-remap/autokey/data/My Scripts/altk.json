@@ -1,11 +1,11 @@
 {
     "type": "script",
-    "description": "alt+k",
+    "description": "altk",
     "store": {},
     "modes": [
         3
     ],
-    "usageCount": 0,
+    "usageCount": 31,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,

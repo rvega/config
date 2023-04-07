@@ -1,11 +1,11 @@
 {
     "type": "script",
-    "description": "ctrl+w",
+    "description": "ctrlw",
     "store": {},
     "modes": [
         3
     ],
-    "usageCount": 32,
+    "usageCount": 22,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,

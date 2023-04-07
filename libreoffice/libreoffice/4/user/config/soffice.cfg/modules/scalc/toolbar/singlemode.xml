@@ -15,7 +15,7 @@
  <toolbar:toolbaritem xlink:href=".uno:FormatPaintbrush"/>
  <toolbar:toolbaritem xlink:href=".uno:SpellDialog" toolbar:visible="false"/>
  <toolbar:toolbarseparator/>
- <toolbar:toolbaritem xlink:href=".uno:NumberFormatStandard" toolbar:visible="false"/>
+ <toolbar:toolbaritem xlink:href=".uno:NumberFormatStandard"/>
  <toolbar:toolbaritem xlink:href=".uno:NumberFormatCurrencySimple"/>
  <toolbar:toolbaritem xlink:href=".uno:NumberFormatPercent"/>
  <toolbar:toolbaritem xlink:href=".uno:NumberFormatDecimal"/>
@@ -23,15 +23,15 @@
  <toolbar:toolbaritem xlink:href=".uno:NumberFormatIncDecimals"/>
  <toolbar:toolbaritem xlink:href=".uno:NumberFormatDecDecimals"/>
  <toolbar:toolbarseparator/>
- <toolbar:toolbaritem xlink:href=".uno:StyleApply"/>
+ <toolbar:toolbaritem xlink:href=".uno:StyleApply" toolbar:visible="false"/>
  <toolbar:toolbarseparator/>
- <toolbar:toolbaritem xlink:href=".uno:CharFontName" toolbar:visible="false"/>
+ <toolbar:toolbaritem xlink:href=".uno:CharFontName"/>
  <toolbar:toolbarseparator/>
- <toolbar:toolbaritem xlink:href=".uno:FontHeight" toolbar:visible="false"/>
+ <toolbar:toolbaritem xlink:href=".uno:FontHeight"/>
  <toolbar:toolbaritem xlink:href=".uno:Grow" toolbar:visible="false"/>
  <toolbar:toolbaritem xlink:href=".uno:Shrink" toolbar:visible="false"/>
+ <toolbar:toolbaritem xlink:href=".uno:Bold"/>
  <toolbar:toolbarseparator/>
- <toolbar:toolbaritem xlink:href=".uno:Bold" toolbar:visible="false"/>
  <toolbar:toolbaritem xlink:href=".uno:Italic" toolbar:visible="false"/>
  <toolbar:toolbaritem xlink:href=".uno:UnderlineSimple" toolbar:visible="false"/>
  <toolbar:toolbaritem xlink:href=".uno:Color"/>
@@ -70,5 +70,5 @@
  <toolbar:toolbaritem xlink:href=".uno:DataFilterStandardFilter" toolbar:visible="false"/>
  <toolbar:toolbaritem xlink:href=".uno:DataFilterSpecialFilter" toolbar:visible="false"/>
  <toolbar:toolbaritem xlink:href=".uno:ConditionalFormatMenu" toolbar:visible="false"/>
- <toolbar:toolbaritem xlink:href=".uno:DesignerDialog"/>
+ <toolbar:toolbaritem xlink:href=".uno:DesignerDialog" toolbar:visible="false"/>
 </toolbar:toolbar>

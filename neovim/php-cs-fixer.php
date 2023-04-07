@@ -31,6 +31,9 @@ return $config->setRules([
 
     'phpdoc_add_missing_param_annotation' => [
         'only_untyped' => false
-    ]
+    ],
 
+    'ordered_imports' => [
+        'sort_algorithm' => 'length'
+    ]
 ]);

@@ -20,7 +20,7 @@ function remove_tmp_dir() {
 }
 trap "remove_tmp_dir" EXIT SIGINT
 
-chmod o-r $TMPFILE 
+chmod o-r $TMPFILE
 alacritty -e /usr/bin/nvim -s /home/Rafa/config/neovim/vimpaste $TMPFILE
 cat $TMPFILE | xclip -selection clipboard
 remove_tmp_dir

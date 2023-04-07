@@ -33,21 +33,30 @@
   editor = vim
 
 [alias]
+  a = "!git ls-files -m -o --exclude-standard | fzf --print0 -m | xargs -0 -t -o git add"
   d = difftool
 
 [init]
   templatedir = ~/Config/git/gittemplate
 
-[diff]
-  tool = vimdiff
-[difftool]
-  prompt = false
+[pull]
+  rebase = false
 
-; [diff]
-;     tool = meld
-; [difftool]
-;     prompt = false
-; [difftool "meld"]
-;     cmd = meld "$LOCAL" "$REMOTE"
-; [pull]
-; 	rebase = false
+;[diff]
+;[difftool]
+;  prompt = false
+
+[diff]
+     tool = meld
+    ; tool = vimdiff
+[difftool]
+    prompt = false
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
+[difftool "kompare"]
+    cmd = kompare "$LOCAL" "$REMOTE"
+
+[cola]
+	spellcheck = false
+
+

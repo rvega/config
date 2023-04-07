@@ -7,22 +7,22 @@
         "menuTakesFocus": false,
         "showTrayIcon": false,
         "sortByUsageCount": true,
-        "promptToSave": true,
+        "promptToSave": false,
         "enableQT4Workaround": false,
         "interfaceType": "XRecord",
         "undoUsingBackspace": true,
         "windowDefaultSize": [
-            715,
-            640
+            1070,
+            749
         ],
-        "hPanePosition": 433,
+        "hPanePosition": 437,
         "columnWidths": [
-            234,
+            114,
             49,
-            142
+            166
         ],
         "showToolbar": true,
-        "notificationIcon": "autokey-status-dark",
+        "notificationIcon": "autokey-status",
         "workAroundApps": ".*VirtualBox.*|krdc.Krdc",
         "triggerItemByInitial": false,
         "disabledModifiers": [

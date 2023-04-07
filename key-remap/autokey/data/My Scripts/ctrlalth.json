@@ -1,13 +1,11 @@
 {
-    "type": "script",
-    "description": "ctrll",
-    "store": {},
-    "modes": [
-        3
-    ],
-    "usageCount": 1,
+    "type": "phrase",
+    "description": "ctrl+alt+h",
+    "modes": [],
+    "usageCount": 36,
     "prompt": false,
     "omitTrigger": false,
+    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [],
@@ -18,13 +16,12 @@
         "wordChars": "[\\w]"
     },
     "hotkey": {
-        "modifiers": [
-            "<ctrl>"
-        ],
-        "hotKey": "l"
+        "modifiers": [],
+        "hotKey": null
     },
     "filter": {
-        "regex": "^((?!VirtualBox).)*$",
+        "regex": null,
         "isRecursive": false
-    }
+    },
+    "sendMode": "kb"
 }

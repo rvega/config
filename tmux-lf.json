@@ -1,0 +1,16 @@
+{
+  "session_name": "lf",
+  "windows": [
+    {
+      "options": {},
+      "window_name": "python",
+      "layout": "bb41,100x35,0,0{50x35,0,0,12,49x35,51,0[49x30,51,0,13,49x4,51,31,14]}",
+      "panes": [
+        "=lf",
+        "=lf"
+      ],
+      "focus": "true",
+      "start_directory": "$PWD"
+    }
+  ]
+}

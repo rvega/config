@@ -1,11 +1,11 @@
 {
     "type": "script",
-    "description": "alt+h",
+    "description": "alth",
     "store": {},
     "modes": [
         3
     ],
-    "usageCount": 86,
+    "usageCount": 21,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,

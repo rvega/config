@@ -36,6 +36,9 @@ function! InstallPlugins()
 
   call minpac#add('lervag/wiki.vim')
 
+  " <c-s> to toggle to-do items in bulleted lists.
+  call minpac#add('lervag/lists.vim')
+
   call minpac#add('SirVer/ultisnips')
   call minpac#add('honza/vim-snippets')
 
@@ -62,6 +65,13 @@ function! InstallPlugins()
 
   " Better spelling corrector
   call minpac#add('kamykn/spelunker.vim')
+
+  " Adds actions for adding surronds: ys, deleting: ds, changing: ds, etc.
+  call minpac#add('tpope/vim-surround')
+  call minpac#add('tpope/vim-repeat')
+
+  " A nice git client.  :Magit
+  call minpac#add('jreybert/vimagit')
 
   call minpac#update()
   call minpac#clean()
@@ -200,14 +210,20 @@ nnoremap <leader>s F'i<return><esc>A<return><esc>kV:s/ /', '/g<return>I[<esc>A]<
 nnoremap gciw <right>bi/* <esc>ea */<esc>
 
 " Jump to next underscore in line and convert to CamelCase
-nnoremap <leader>- f_xgUl
 nnoremap <leader>_ f_xgUl
+"
+" Jump to next uppercase letter and replace it with underscore and lowercase.
+" This is useful for converting camelCase to snake_case
+nnoremap <leader>- /[A-Z]<return>i_<esc>lgul:noh<cr>
 
 " Replace ['something'] with ->something This is useful for php
 nnoremap <leader>> f[xxi-><esc>f]xX<esc>
 
 " Replace ->something with ['something'] This is useful for php
 nnoremap <leader>[ f-xxi['<esc>ea']<esc>
+
+" Close html tag.
+nnoremap <leader>/ a</<c-x><c-o><esc>==
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -224,7 +240,7 @@ nnoremap <leader>[ f-xxi['<esc>ea']<esc>
 " occurences. Also :tag <keyword> is useful
 
 " Look for tags file in file directory or current directory
-" set tags=./tags,tags,/home/rvg/tags
+" set tags=./tags,tags,/home/vega/tags
 set tags=./tags,tags
 
 nnoremap <silent> [t :tprevious<CR>
@@ -278,7 +294,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Undo history
 "
-
 set undofile
 autocmd BufWritePre /tmp/* setlocal noundofile
 nnoremap <leader>z :UndotreeToggle<cr>
@@ -359,9 +374,11 @@ endfunction
 let g:wiki_root = '/home/Rafa/wiki'
 let g:wiki_link_target_type = 'md'
 
-" let g:wiki_mappings_global = {
-"       \ '<plug>(wiki-list-toggle)' : '<leader>x',
-" \}
+" Enable lists in markdown files.
+let g:lists_filetypes = ['markdown', 'md', 'wiki']
+let g:wiki_mappings_global = {
+      \ '<plug>(wiki-list-toggle)' : '<leader>x',
+\}
 
 function! FoldLevel99(timer)
   setlocal foldlevel=99
@@ -372,7 +389,7 @@ function! MarkdownConfig()
   setlocal softtabstop=3
   setlocal shiftwidth=3
   setlocal conceallevel=1
-  inoremap <buffer> [<space> [ ]<space>
+  inoremap <buffer> [<space> * [ ]<space>
   " autocmd BufEnter *.md :call timer_start(100, 'FoldLevel99', {'repeat':1}) 
 endfunction
 
@@ -415,9 +432,9 @@ let g:ale_fixers = {
       \'cpp': ['clang-format'],
       \'json': ['prettier'],
       \'html': ['prettier'],
-      \'python': ['yapf'],
       \'xml': ['xmllint'],
-      \'php': ['php_cs_fixer']
+      \'php': ['php_cs_fixer'],
+      \'python': ['yapf']
       \}
 "     \'php': ['phpcbf'],
 "     \'javascript': ['eslint']
@@ -445,11 +462,16 @@ hi link ALEInfoSign cComment
 nmap <leader>j :ALEGoToDefinition<cr>
 nmap <leader>k :ALEFindReferences<cr>
 
-let g:ale_php_cs_fixer_options = '--config=/home/rvg/.php-cs-fixer.php'
-let g:ale_php_langserver_executable = '/home/rvg/.config/composer/vendor/bin/php-language-server.php'
-" let g:ale_php_cs_fixer_use_global = 1
-" let g:ale_php_phpcbf_standard='PSR12'
-" let g:ale_php_phpcs_standard='PSR12'
+let g:ale_php_cs_fixer_executable = '/usr/bin/rvg-php-cs-fixer'
+let g:ale_php_cs_fixer_options = '--config=/home/vega/.php-cs-fixer.php'
+let g:ale_php_cs_fixer_use_global = 1
+let g:ale_php_langserver_executable = '/home/vega/.config/composer/vendor/bin/php-language-server.php'
+" let g:ale_history_log_output=1
+" " Lint php files when saving.
+" augroup php_ftftft
+"   autocmd Filetype php
+"          \ autocmd! BufWrite <buffer> :ALEFix 
+" augroup END
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

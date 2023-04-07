@@ -10,4 +10,5 @@ link:
 	ln -fs ~/Config/neovim/nvim ~/.config/nvim
 	ln -fs ~/Config/neovim/clang-format ~/.clang-format
 	ln -fs ~/Config/neovim/php-cs-fixer.php ~/.php-cs-fixer.php
+	ln -fs ~/Config/neovim/terminal_vim.desktop ~/.local/share/applications
 

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Service
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
+MimeType=inode/directory;
+Actions=openAlacrittyHere;
+X-KDE-AuthorizeAction=shell_access
+
+[Desktop Action openAlacrittyHere]
+TryExec=alacritty
+Icon=utilities-terminal
+Exec=/home/rvg/Config/alacritty/launch_alacritty.sh %f
+Name=Open Alacritty Here
+Comment=Opens a terminal in the current folder

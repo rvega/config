@@ -11,11 +11,18 @@
 ####
 
 # Capslock as Ctrl 
-xmodmap -e "remove lock = Caps_Lock" 2> /dev/null
-xmodmap -e "keycode 66 = Control_L NoSymbol Control_L"
-xmodmap -e "add control = Control_L"
+setxkbmap -option ctrl:nocaps 
+# xmodmap -e "remove lock = Caps_Lock" 2> /dev/null
+# xmodmap -e "keycode 66 = Control_L NoSymbol Control_L"
+# xmodmap -e "add control = Control_L"
 
 
 # Right menu as Ctrl
 xmodmap -e "keycode 135 = Control_R NoSymbol Control_R"
 xmodmap -e "add control = Control_R"
+
+
+# Key repetition delay.
+gsettings set org.gnome.desktop.peripherals.keyboard delay 251
+gsettings set org.gnome.desktop.peripherals.keyboard delay 250
+

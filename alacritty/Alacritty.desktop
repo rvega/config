@@ -11,6 +11,7 @@ GenericName=Terminal
 Comment=A fast, cross-platform, OpenGL terminal emulator
 StartupWMClass=Alacritty
 Actions=New;
+X-Desktop-File-Install-Version=0.30
 
 [Desktop Action New]
 Name=New Terminal

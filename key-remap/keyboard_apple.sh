@@ -25,3 +25,8 @@ xmodmap -e "remove mod4 = Super_R"
 # xmodmap -e "keycode 134 = Alt_R Meta_R ISO_Level3_Shift" # Gnome, Cinnamon
 xmodmap -e "keycode 134 = ISO_Level3_Shift NoSymbol ISO_Level3_Shift" # XFCE
 # xmodmap -e "add mod5 = ISO_Level3_Shift" # XFCE?
+
+
+# Key repetition delay.
+gsettings set org.gnome.desktop.peripherals.keyboard delay 251
+gsettings set org.gnome.desktop.peripherals.keyboard delay 250
