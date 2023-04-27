@@ -1,0 +1,10 @@
+[Desktop Entry]
+Icon=virt-manager
+Exec=/home/vega/Config/virtual-manager/start-virt-manager.sh
+Type=Application
+Terminal=false
+Categories=System;
+Name=Virtual Machine Manager
+Keywords=vmm;
+Name=Virtual Machine Manager
+Comment=Manage virtual machines

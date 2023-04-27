@@ -5,21 +5,21 @@
         "isFirstRun": false,
         "serviceRunning": true,
         "menuTakesFocus": false,
-        "showTrayIcon": false,
+        "showTrayIcon": true,
         "sortByUsageCount": true,
-        "promptToSave": false,
+        "promptToSave": true,
         "enableQT4Workaround": false,
         "interfaceType": "XRecord",
         "undoUsingBackspace": true,
         "windowDefaultSize": [
-            1070,
-            749
+            834,
+            708
         ],
-        "hPanePosition": 437,
+        "hPanePosition": 285,
         "columnWidths": [
-            114,
-            49,
-            166
+            216,
+            59,
+            100
         ],
         "showToolbar": true,
         "notificationIcon": "autokey-status",
@@ -34,7 +34,7 @@
             "1",
             "0"
         ],
-        "pathLastOpen": "0:3"
+        "pathLastOpen": "0:6"
     },
     "folders": [],
     "toggleServiceHotkey": {

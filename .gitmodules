@@ -10,9 +10,3 @@
 [submodule "vifm/colors"]
 	path = vifm/colors
 	url = https://github.com/vifm/vifm-colors
-[submodule "rofi/adi1090x-rofi-repo"]
-	path = rofi/adi1090x-rofi-repo
-	url = https://github.com/adi1090x/rofi.git
-[submodule "rofi/rofi-translate"]
-	path = rofi/rofi-translate
-	url = https://github.com/garyparrot/rofi-translate

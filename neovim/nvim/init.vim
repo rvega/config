@@ -29,7 +29,7 @@ function! InstallPlugins()
 
   call minpac#add('mbbill/undotree')
 
-  call minpac#add('junegunn/fzf', {'do': 'install --bin'})
+  call minpac#add('junegunn/fzf', {'do': './install --bin'})
   call minpac#add('junegunn/fzf.vim')
 
   call minpac#add('derekwyatt/vim-fswitch')
@@ -59,7 +59,7 @@ function! InstallPlugins()
 
   call minpac#add('chriskempson/base16-vim')
 
-  call minpac#add('vim-vdebug/vdebug', {'type': 'opt'}) 
+  " call minpac#add('vim-vdebug/vdebug', {'type': 'opt'}) 
 
   call minpac#add('moll/vim-bbye')
 
@@ -71,7 +71,10 @@ function! InstallPlugins()
   call minpac#add('tpope/vim-repeat')
 
   " A nice git client.  :Magit
-  call minpac#add('jreybert/vimagit')
+  " call minpac#add('jreybert/vimagit')
+
+  " Compile from within vim using cmake. 
+  call minpac#add('ilyachur/cmake4vim')
 
   call minpac#update()
   call minpac#clean()
@@ -89,8 +92,8 @@ set relativenumber
 set number
 set ignorecase 
 set smartcase
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 set clipboard^=unnamed,unnamedplus
 set linebreak
@@ -180,6 +183,8 @@ nnoremap <leader>n :bn<cr>
 nnoremap <leader>N :bp<cr>
 nnoremap <leader>l :Buffers<cr>
 nnoremap <leader>d :Bdelete<cr>
+
+nnoremap <leader>q :q<cr>
 
 " Folds
 " Disabling this. Use zR, zr, zM, zm instead. (z reduce and z more)
@@ -316,14 +321,12 @@ nnoremap <leader>z :UndotreeToggle<cr>
 " https://github.com/junegunn/fzf.vim
 "
 " Use these commands!!!
-" <leader>t or :GFiles for opening files in repo.
+" <leader>t or :GFiles for opening files in repo. see below.
 " <leader>T or :Files for opening ALL files, even gitignored files.
+" <leader>r or :Rg to search in whole project. Respects ignore files
 " :Tags
-" :Rg
 " :Snippets
 
-nmap <leader>t :GFiles<cr> 
-nmap <leader>T :Files<cr>
 " nmap <leader><tab> <plug>(fzf-maps-n)
 " xmap <leader><tab> <plug>(fzf-maps-x)
 " omap <leader><tab> <plug>(fzf-maps-o)<Paste>
@@ -331,9 +334,30 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 let g:fzf_preview_window = []
 
-" This is what is executed for :Files command
-let $FZF_DEFAULT_COMMAND = 'rg --files --follow --hidden --no-ignore --color=never 2> /dev/null'
-"let $FZF_DEFAULT_OPTS = '--keep-right'
+"""""
+" This will respect .gitignore and .ignore files (use the .ignore file!)
+command! -bang RafaFiles call fzf#run(fzf#wrap({'source': "rg --files --follow --hidden --color=never", 'sink': 'e'}))
+nmap <leader>t :RafaFiles<cr> 
+
+" This NOT will respect .gitignore or .ignore files will show everything
+command! -bang RafaAllFiles call fzf#run(fzf#wrap({'source': "rg --files --follow --hidden --no-ignore --color=never --glob !.cache --glob !.git", 'sink': 'e'}))
+nmap <leader>T :RafaAllFiles<cr> 
+
+" Search within files respecting .gitignore and .ignore
+command! -bang -nargs=* RipGrep call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1, fzf#vim#with_preview(), <bang>0)
+nmap <leader>r :RipGrep 
+
+" Search within files without respecting .gitignore and .ignore
+command! -bang -nargs=* RipGrepAll call fzf#vim#grep("rg --no-ignore --glob !tags --glob !.git --glob !.cache --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1, fzf#vim#with_preview(), <bang>0)
+nmap <leader>R :RipGrepAll 
+
+"""""
+" This is what I had before:
+"     nmap <leader>t :GFiles<cr> 
+"     nmap <leader>T :Files<cr>
+"     " This is what is executed for :Files command
+"     let $FZF_DEFAULT_COMMAND = 'rg --files --follow --hidden --no-ignore --color=never 2> /dev/null'
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Jump between c and h (companion) files.
@@ -349,6 +373,14 @@ au! BufEnter *.ts let b:fswitchdst = 'html' | let b:fswitchlocs = './'
 au! BufEnter *.html let b:fswitchdst = 'ts' | let b:fswitchlocs = './'
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Compile using cmake
+
+let g:cmake_build_dir="Build"
+let g:cmake_project_generator="Ninja"
+" g:cmake_build_executor_height=5
+" map <leader>b :CMakeBuild<cr>:copen<cr>
+map <leader>b :CMakeBuild<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Line wrapping and vertical movement as a word processor.
@@ -423,7 +455,7 @@ let g:ale_linters = {
       \'json': ['prettier'],
       \'php': ['intelephense']
       \ }
-      " \'php': ['phpcs'],
+" \'php': ['phpcs'],
 " \'python': ['pycodestyle'],
 " \'javascript': ['eslint']
 
