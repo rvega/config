@@ -404,7 +404,8 @@ endfunction
 "" <leader>ww
 
 let g:wiki_root = '/home/Rafa/wiki'
-let g:wiki_link_target_type = 'md'
+" let g:wiki_link_target_type = 'md'
+let g:wiki_filetypes = ['wiki']
 
 " Enable lists in markdown files.
 let g:lists_filetypes = ['markdown', 'md', 'wiki']
@@ -582,6 +583,14 @@ augroup spelunker
   autocmd BufWinEnter,BufWritePost *.php call spelunker#check()
 augroup END
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  Macros
+" 
+
+" Fix Black rooster audio style doxygen code blocks.
+let @p = '^v%:s/\t//gv%kj:s/^/ * /gxwlh%XXv%>fdd2w=ip' 
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors
 " 
@@ -610,7 +619,7 @@ highlight LineNr ctermfg=240 ctermbg=0
 " set colorcolumn=68
 " highlight ColorColumn ctermbg=0
 
-" F10 to show syntax group of current word. Useful when setting up colors or highlighting.
+" " F10 to show syntax group of current word. Useful when setting up colors or highlighting.
 " map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 " \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 " \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
@@ -627,4 +636,3 @@ let g:vdebug_options = {
 \        "/var/www/": "/home/Rafa/Projects/Active/OneRPM/repos/onerpm-api",
 \   },
 \}
-
