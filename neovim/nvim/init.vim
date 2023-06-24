@@ -1,4 +1,5 @@
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Manager Minpac
 " 
@@ -449,6 +450,10 @@ augroup END
 " <leader>f
 "
 
+" This might be useful when working with non C file types?
+" let g:ale_completion_enabled = 1
+set omnifunc=ale#completion#OmniFunc 
+
 let g:ale_linters_explicit = 1
 let g:ale_linters = {
       \ 'c': ['clangd'],
@@ -476,8 +481,6 @@ let g:ale_fixers = {
 " let g:ale_python_pycodestyle_options = '--max-line-length=115'
 " let g:ale_python_autopep8_options = '--max-line-length 115'
 
-" This might be useful when working with non C file types?
-" set omnifunc=ale#completion#OmniFunc 
 
 nmap <leader>f :ALEFix<cr>
 nmap <leader>e :lopen<cr>
@@ -506,6 +509,11 @@ let g:ale_php_langserver_executable = '/home/vega/.config/composer/vendor/bin/ph
 "          \ autocmd! BufWrite <buffer> :ALEFix 
 " augroup END
 
+" Use ale's autocomplete source for cpp files. Trigger autocompletion with
+" <c-x><c-o> in insert mode.
+augroup cpp_ft
+  autocmd FileType cpp :set omnifunc=ale#completion#OmniFunc 
+augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toggle Comments.
@@ -636,3 +644,4 @@ let g:vdebug_options = {
 \        "/var/www/": "/home/Rafa/Projects/Active/OneRPM/repos/onerpm-api",
 \   },
 \}
+
