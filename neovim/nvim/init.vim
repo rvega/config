@@ -43,7 +43,11 @@ function! InstallPlugins()
   call minpac#add('SirVer/ultisnips')
   call minpac#add('honza/vim-snippets')
 
-  call minpac#add('dense-analysis/ale')
+  " See lua/init.lua script. This is where the integration with language
+  " servers is configured. (semantic completions, fixers, linters, etc.)
+  call minpac#add('nvim-lua/plenary.nvim')
+  call minpac#add('jose-elias-alvarez/null-ls.nvim')
+  call minpac#add('neovim/nvim-lspconfig')
 
   call minpac#add('tpope/vim-commentary')
 
@@ -108,6 +112,7 @@ set scrolloff=10
 set wildmenu
 set wildmode=list:longest
 set laststatus=0
+
 
 " For motions, underscore separates words.
 " For searches with * underscore does not separate words.
@@ -185,6 +190,7 @@ nnoremap <leader>N :bp<cr>
 nnoremap <leader>l :Buffers<cr>
 nnoremap <leader>d :Bdelete<cr>
 
+" Close file / window
 nnoremap <leader>q :q<cr>
 
 " Folds
@@ -441,80 +447,6 @@ augroup END
 "   return 1
 " endfunction
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ALE Plugin provides integration with outside tools such as language servers,
-" linters and fixers and gives you a bunch of things. I'm using it to show
-" compiler errors (linting) and automatic code formating (fixing). 
-" :lopen
-" <leader>f
-"
-
-" This might be useful when working with non C file types?
-" let g:ale_completion_enabled = 1
-set omnifunc=ale#completion#OmniFunc 
-
-let g:ale_linters_explicit = 1
-let g:ale_linters = {
-      \ 'c': ['clangd'],
-      \ 'cpp': ['clangd'],
-      \'json': ['prettier'],
-      \'php': ['intelephense']
-      \ }
-" \'php': ['phpcs'],
-" \'python': ['pycodestyle'],
-" \'javascript': ['eslint']
-
-let g:ale_fixers = {
-      \'c': ['clang-format'],
-      \'cpp': ['clang-format'],
-      \'json': ['prettier'],
-      \'html': ['prettier'],
-      \'xml': ['xmllint'],
-      \'php': ['php_cs_fixer'],
-      \'python': ['yapf']
-      \}
-"     \'php': ['phpcbf'],
-"     \'javascript': ['eslint']
-
-" let g:ale_javascript_eslint_use_global = 1
-" let g:ale_python_pycodestyle_options = '--max-line-length=115'
-" let g:ale_python_autopep8_options = '--max-line-length 115'
-
-
-nmap <leader>f :ALEFix<cr>
-nmap <leader>e :lopen<cr>
-
-" Style for error markers
-let g:ale_set_highlights = 0
-let g:ale_sign_error = ' x'
-let g:ale_sign_warning = ' !'
-let g:ale_sign_info= ' i'
-hi link ALEErrorSign cComment
-hi link ALEWarningSign cComment
-hi link ALEInfoSign cComment
-
-" Jump around with ALE
-nmap <leader>j :ALEGoToDefinition<cr>
-nmap <leader>k :ALEFindReferences<cr>
-
-let g:ale_php_cs_fixer_executable = '/usr/bin/rvg-php-cs-fixer'
-let g:ale_php_cs_fixer_options = '--config=/home/vega/.php-cs-fixer.php'
-let g:ale_php_cs_fixer_use_global = 1
-let g:ale_php_langserver_executable = '/home/vega/.config/composer/vendor/bin/php-language-server.php'
-" let g:ale_history_log_output=1
-" " Lint php files when saving.
-" augroup php_ftftft
-"   autocmd Filetype php
-"          \ autocmd! BufWrite <buffer> :ALEFix 
-" augroup END
-
-" Use ale's autocomplete source for cpp files. Trigger autocompletion with
-" <c-x><c-o> in insert mode.
-augroup cpp_ft
-  autocmd FileType cpp :set omnifunc=ale#completion#OmniFunc 
-augroup END
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toggle Comments.
 "
@@ -645,3 +577,4 @@ let g:vdebug_options = {
 \   },
 \}
 
+lua require('init')
